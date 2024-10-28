@@ -1,1 +1,40 @@
+// Custom Theming for Angular Material
+// For more information: https://material.angular.io/guide/theming
+@use '@angular/material' as mat;
+
+// Include the core styles for Angular Material once.
+@include mat.core();
+
+// Define the theme object.
+$mymdb-angular-client-theme: mat.define-theme((
+  color: (
+    theme-type: light,
+    primary: mat.$azure-palette,
+    tertiary: mat.$blue-palette,
+  ),
+  density: (
+    scale: 0,
+  )
+));
+
+// Include theme styles for all components used in your app.
+:root {
+  @include mat.all-component-themes($mymdb-angular-client-theme);
+}
+
+// Optional: Include the typography styles if needed.
+// @include mat.typography-hierarchy($mymdb-angular-client-theme);
+
+// Optional: Enable backward compatibility for color variants if needed.
+// @include mat.color-variants-backwards-compatibility($mymdb-angular-client-theme);
+
 /* You can add global styles to this file, and also import other style files */
+
+html, body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
