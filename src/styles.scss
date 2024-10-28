@@ -28,13 +28,45 @@ $mymdb-angular-client-theme: mat.define-theme((
 // Optional: Enable backward compatibility for color variants if needed.
 // @include mat.color-variants-backwards-compatibility($mymdb-angular-client-theme);
 
-/* You can add global styles to this file, and also import other style files */
-
-html, body {
-  height: 100%;
+.custom-dialog-container {
+  .mat-mdc-dialog-container {
+    padding: 0;
+  }
+  
+  .mat-mdc-dialog-surface {
+    overflow: hidden !important;
+  }
 }
 
-body {
-  margin: 0;
-  font-family: Roboto, "Helvetica Neue", sans-serif;
+mat-dialog-container {
+  mat-form-field {
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+}
+
+.mat-mdc-dialog-content {
+  padding: 0 !important;
+  margin: 0 !important;
+  max-height: none !important;
+}
+
+// Main page styles
+.main-page {
+  text-align: center;
+  padding: 2rem;
+  
+  h1 {
+    margin-bottom: 2rem;
+  }
+  
+  .button-group {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    
+    button {
+      min-width: 100px;
+    }
+  }
 }

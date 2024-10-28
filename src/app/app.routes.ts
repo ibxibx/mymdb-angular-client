@@ -1,4 +1,7 @@
 import { Routes } from '@angular/router';
-import { HttpClientModule } from '@angular/common/http';
+import { MovieCardComponent } from './movie-card/movie-card.component';
 
-export const routes: Routes = [];
+export const routes: Routes = [
+  { path: 'movies', component: MovieCardComponent },
+  { path: '', redirectTo: 'welcome', pathMatch: 'full' },
+];
