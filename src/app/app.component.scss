@@ -1,18 +1,30 @@
 .main-page {
   text-align: center;
   padding: 2rem;
-  
+
   h1 {
     margin-bottom: 2rem;
   }
-  
+
   .button-group {
     display: flex;
     gap: 1rem;
     justify-content: center;
-    
+
     button {
       min-width: 100px;
     }
+  }
+}
+
+.navbar {
+  margin-bottom: 1rem;
+
+  .toolbar-spacer {
+    flex: 1 1 auto;
+  }
+
+  .active {
+    background-color: rgba(255, 255, 255, 0.1);
   }
 }

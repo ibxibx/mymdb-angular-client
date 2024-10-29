@@ -5,6 +5,7 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { CommonModule } from '@angular/common';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
+import { NavigationComponent } from '../navigation/navigation.component';
 
 // Interface matching server side model
 interface Movie {
@@ -37,6 +38,7 @@ interface Movie {
     MatDialogModule,
     MatIconModule,
     MatButtonModule,
+    NavigationComponent,
   ],
 })
 export class MovieCardComponent {

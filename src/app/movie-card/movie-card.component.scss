@@ -1,55 +1,66 @@
 // movie-card.component.scss
 .movie-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
   gap: 20px;
   padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
 
   mat-card {
-    height: auto;
-    margin: 0;
+    height: 100%;
     display: flex;
     flex-direction: column;
-    padding-bottom: 20px; // Consistent bottom padding
-
-    mat-card-header {
-      height: 80px;
-      padding: 16px 16px 0; // Adjusted padding
-
-      mat-card-title {
-        font-size: 1.1rem;
-        line-height: 1.2;
-      }
-    }
 
     img {
       width: 100%;
-      height: 350px;
+      height: 400px;
       object-fit: cover;
-      object-position: center;
-      margin-bottom: 10px; // Small margin below image
+    }
+
+    mat-card-header {
+      height: 80px;
+      overflow: hidden;
+
+      mat-card-title {
+        font-size: 1.2rem;
+        margin-bottom: 8px;
+      }
+
+      mat-card-subtitle {
+        font-size: 0.9rem;
+      }
     }
 
     mat-card-actions {
-      padding: 8px 16px; // Padding
-      margin: 0;
+      margin-top: auto;
+      padding: 8px;
       display: flex;
-      justify-content: space-between;
-      flex-wrap: wrap;
       gap: 8px;
+      flex-wrap: wrap;
 
       button {
-        margin: 0; // Default button margins
+        flex-grow: 1;
+        min-width: 0;
+      }
+
+      button[mat-icon-button] {
+        flex-grow: 0;
       }
     }
   }
 }
 
-// Media queries for responsiveness
-@media screen and (max-width: 600px) {
+// Responsive adjustments
+@media (max-width: 599px) {
   .movie-grid {
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    gap: 10px;
+    grid-template-columns: 1fr;
     padding: 10px;
+  }
+}
+
+@media (min-width: 600px) and (max-width: 959px) {
+  .movie-grid {
+    grid-template-columns: repeat(2, 1fr);
   }
 }

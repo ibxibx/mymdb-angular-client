@@ -6,6 +6,7 @@ import { RouterOutlet } from '@angular/router';
 import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
 import { MovieCardComponent } from '../movie-card/movie-card.component';
+import { NavigationComponent } from '../navigation/navigation.component';
 
 @Component({
   selector: 'app-welcome-page',
@@ -17,6 +18,7 @@ import { MovieCardComponent } from '../movie-card/movie-card.component';
     UserRegistrationFormComponent,
     UserLoginFormComponent,
     MovieCardComponent,
+    NavigationComponent,
   ],
   templateUrl: './welcome-page.component.html',
   styleUrls: ['./welcome-page.component.scss'],

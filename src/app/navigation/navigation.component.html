@@ -1,0 +1,14 @@
+<!-- src/app/navigation/navigation.component.html -->
+<nav *ngIf="isLoggedIn() && !isWelcomePage()" class="navigation-bar">
+  <div class="nav-content">
+    <div class="logo-container">
+      <img src="/assets/mymdb-logo.png" alt="MyMDB Logo" class="nav-logo" />
+    </div>
+
+    <div class="nav-links">
+      <a routerLink="/movies" routerLinkActive="active">Movies</a>
+      <a routerLink="/profile" routerLinkActive="active">Profile</a>
+      <a href="#" (click)="logout($event)">Logout</a>
+    </div>
+  </div>
+</nav>
