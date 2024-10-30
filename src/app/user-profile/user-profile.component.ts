@@ -1,14 +1,20 @@
+// user-profile.component.ts
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { FetchApiDataService } from '../fetch-api-data.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { MatDialog } from '@angular/material/dialog';
 import { CommonModule } from '@angular/common';
 import { MatCardModule } from '@angular/material/card';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
 import { FormsModule } from '@angular/forms';
 import { NavigationComponent } from '../navigation/navigation.component';
+import GenreDialogComponent from '../dialogs/genre-dialog.component';
+import DirectorDialogComponent from '../dialogs/director-dialog.component';
+import SynopsisDialogComponent from '../dialogs/synopsis-dialog.component';
 
 @Component({
   selector: 'app-user-profile',
@@ -21,13 +27,18 @@ import { NavigationComponent } from '../navigation/navigation.component';
     MatFormFieldModule,
     MatInputModule,
     MatButtonModule,
+    MatIconModule,
     FormsModule,
     NavigationComponent,
+    GenreDialogComponent,
+    DirectorDialogComponent,
+    SynopsisDialogComponent,
   ],
 })
 export class UserProfileComponent implements OnInit {
   user: any = {};
   editMode: boolean = false;
+  favoriteMovies: any[] = [];
   updatedUser = {
     Username: '',
     Password: '',
@@ -35,25 +46,19 @@ export class UserProfileComponent implements OnInit {
     Birthday: '',
   };
 
-  /**
-   * @constructor
-   */
   constructor(
     public fetchApiData: FetchApiDataService,
+    public dialog: MatDialog,
     public snackBar: MatSnackBar,
     private router: Router
   ) {}
 
   ngOnInit(): void {
     this.getUser();
+    this.loadFavoriteMovies();
   }
 
-  /**
-   * @method getUser
-   * @description Fetches the current user's data from the API
-   */
   getUser(): void {
-    // Get the user ID from localStorage
     const user = JSON.parse(localStorage.getItem('user') || '{}');
     const userId = user._id;
 
@@ -76,14 +81,26 @@ export class UserProfileComponent implements OnInit {
     });
   }
 
+  loadFavoriteMovies(): void {
+    const user = JSON.parse(localStorage.getItem('user') || '{}');
+    if (user._id) {
+      // First get the user's favorite movie IDs
+      this.fetchApiData.getFavoriteMovies(user._id).subscribe((favoriteIds) => {
+        // Then get all movies
+        this.fetchApiData.getAllMovies().subscribe((movies) => {
+          // Filter movies to only include favorites
+          this.favoriteMovies = movies.filter((movie: any) =>
+            favoriteIds.includes(movie._id)
+          );
+        });
+      });
+    }
+  }
+
   toggleEditMode(): void {
     this.editMode = !this.editMode;
   }
 
-  /**
-   * @method updateUser
-   * @description Updates the user's profile information
-   */
   updateUser(): void {
     const user = JSON.parse(localStorage.getItem('user') || '{}');
     const userId = user._id;
@@ -113,10 +130,6 @@ export class UserProfileComponent implements OnInit {
     });
   }
 
-  /**
-   * @method deleteAccount
-   * @description Deletes the user's account
-   */
   deleteAccount(): void {
     if (
       confirm(
@@ -149,5 +162,42 @@ export class UserProfileComponent implements OnInit {
         },
       });
     }
+  }
+
+  removeFavorite(movieId: string): void {
+    const user = JSON.parse(localStorage.getItem('user') || '{}');
+    if (user._id) {
+      this.fetchApiData.removeFavoriteMovie(user._id, movieId).subscribe(() => {
+        this.snackBar.open('Movie removed from favorites', 'OK', {
+          duration: 2000,
+        });
+        this.loadFavoriteMovies(); // Reload the favorites list
+      });
+    }
+  }
+
+  openGenreDialog(genre: any): void {
+    this.dialog.open(GenreDialogComponent, {
+      width: '400px',
+      data: genre,
+    });
+  }
+
+  openDirectorDialog(director: any): void {
+    this.dialog.open(DirectorDialogComponent, {
+      width: '400px',
+      data: director,
+    });
+  }
+
+  openSynopsisDialog(movie: any): void {
+    this.dialog.open(SynopsisDialogComponent, {
+      width: '400px',
+      data: {
+        title: movie.Title,
+        description: movie.Description,
+        actors: movie.Actors,
+      },
+    });
   }
 }

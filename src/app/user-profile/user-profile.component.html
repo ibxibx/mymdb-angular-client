@@ -1,83 +1,136 @@
-<!-- src/app/user-profile/user-profile.component.html -->
+<!-- user-profile.component.html -->
 <app-navigation></app-navigation>
-
 <div class="profile-container">
-  <mat-card>
-    <mat-card-header>
-      <mat-card-title>Profile</mat-card-title>
-    </mat-card-header>
-    <mat-card-content>
-      <div *ngIf="!editMode" class="profile-info">
-        <p><strong>Username:</strong> {{ user.Username }}</p>
-        <p><strong>Email:</strong> {{ user.Email }}</p>
-        <p><strong>Birthday:</strong> {{ user.Birthday | date }}</p>
-      </div>
+  <div class="profile-section">
+    <mat-card>
+      <mat-card-header>
+        <mat-card-title>Profile</mat-card-title>
+      </mat-card-header>
 
-      <form *ngIf="editMode" class="profile-form">
-        <mat-form-field>
-          <mat-label>Username</mat-label>
-          <input
-            matInput
-            [(ngModel)]="updatedUser.Username"
-            name="Username"
-            required
-          />
-        </mat-form-field>
+      <mat-card-content>
+        <!-- Profile Info Display -->
+        <div class="profile-info" *ngIf="!editMode">
+          <p><strong>Username:</strong> {{ user.Username }}</p>
+          <p><strong>Email:</strong> {{ user.Email }}</p>
+          <p><strong>Birthday:</strong> {{ user.Birthday | date }}</p>
 
-        <mat-form-field>
-          <mat-label>Password</mat-label>
-          <input
-            matInput
-            type="password"
-            [(ngModel)]="updatedUser.Password"
-            name="Password"
-            placeholder="Leave blank to keep current password"
-          />
-        </mat-form-field>
+          <div class="profile-actions">
+            <button
+              mat-raised-button
+              color="primary"
+              (click)="toggleEditMode()"
+            >
+              Edit Profile
+            </button>
+            <button mat-raised-button color="warn" (click)="deleteAccount()">
+              Delete Account
+            </button>
+          </div>
+        </div>
 
-        <mat-form-field>
-          <mat-label>Email</mat-label>
-          <input
-            matInput
-            type="email"
-            [(ngModel)]="updatedUser.Email"
-            name="Email"
-            required
-          />
-        </mat-form-field>
+        <!-- Edit Form -->
+        <form *ngIf="editMode" class="edit-form">
+          <mat-form-field>
+            <mat-label>Username</mat-label>
+            <input
+              matInput
+              [(ngModel)]="updatedUser.Username"
+              name="Username"
+              required
+            />
+          </mat-form-field>
 
-        <mat-form-field>
-          <mat-label>Birthday</mat-label>
-          <input
-            matInput
-            type="date"
-            [(ngModel)]="updatedUser.Birthday"
-            name="Birthday"
-          />
-        </mat-form-field>
-      </form>
-    </mat-card-content>
+          <mat-form-field>
+            <mat-label>Password</mat-label>
+            <input
+              matInput
+              type="password"
+              [(ngModel)]="updatedUser.Password"
+              name="Password"
+              placeholder="Leave blank to keep current password"
+            />
+          </mat-form-field>
 
-    <mat-card-actions>
-      <button
-        mat-raised-button
-        color="primary"
-        (click)="toggleEditMode()"
-        *ngIf="!editMode"
-      >
-        Edit Profile
-      </button>
+          <mat-form-field>
+            <mat-label>Email</mat-label>
+            <input
+              matInput
+              type="email"
+              [(ngModel)]="updatedUser.Email"
+              name="Email"
+              required
+            />
+          </mat-form-field>
 
-      <ng-container *ngIf="editMode">
-        <button mat-raised-button color="primary" (click)="updateUser()">
-          Save Changes
-        </button>
-        <button mat-button (click)="toggleEditMode()">Cancel</button>
-      </ng-container>
+          <mat-form-field>
+            <mat-label>Birthday</mat-label>
+            <input
+              matInput
+              type="date"
+              [(ngModel)]="updatedUser.Birthday"
+              name="Birthday"
+            />
+          </mat-form-field>
 
-      <button mat-raised-button color="warn" (click)="deleteAccount()">
-        Delete Account
-      </button>
-    </mat-card-actions>
-  </mat-card>
+          <div class="form-actions">
+            <button mat-raised-button color="primary" (click)="updateUser()">
+              Save Changes
+            </button>
+            <button mat-button (click)="toggleEditMode()">Cancel</button>
+          </div>
+        </form>
+      </mat-card-content>
+    </mat-card>
+  </div>
+
+  <!-- Favorite Movies Section -->
+  <div class="favorites-section">
+    <h2>My Favorite Movies</h2>
+    <div class="favorites-grid">
+      <mat-card *ngFor="let movie of favoriteMovies">
+        <img
+          mat-card-image
+          [src]="movie.ImagePath"
+          [alt]="movie.Title"
+          (click)="openSynopsisDialog(movie)"
+        />
+        <mat-card-header>
+          <mat-card-title>{{ movie.Title }}</mat-card-title>
+          <mat-card-subtitle
+            >Directed by: {{ movie.Director.name }}</mat-card-subtitle
+          >
+        </mat-card-header>
+        <mat-card-actions>
+          <button
+            mat-button
+            color="primary"
+            (click)="openGenreDialog(movie.Genres[0])"
+          >
+            Genre
+          </button>
+          <button
+            mat-button
+            color="primary"
+            (click)="openDirectorDialog(movie.Director)"
+          >
+            Director
+          </button>
+          <button
+            mat-button
+            color="primary"
+            (click)="openSynopsisDialog(movie)"
+          >
+            Synopsis
+          </button>
+          <button
+            mat-icon-button
+            color="warn"
+            (click)="removeFavorite(movie._id)"
+          >
+            <mat-icon>favorite</mat-icon>
+          </button>
+        </mat-card-actions>
+      </mat-card>
+    </div>
+  </div>
 </div>

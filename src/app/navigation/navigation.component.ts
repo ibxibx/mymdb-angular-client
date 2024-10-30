@@ -12,7 +12,12 @@ import { CommonModule } from '@angular/common';
   styleUrls: ['./navigation.component.scss'],
 })
 export class NavigationComponent {
-  logoPath = 'assets/mymdb-logo.png';
+  // Get the base URL dynamically
+  baseUrl = window.location.pathname.includes('mymdb-angular-client')
+    ? '/mymdb-angular-client'
+    : '';
+
+  logoPath = `${this.baseUrl}/assets/mymdb-logo.png`;
 
   constructor(private router: Router) {}
 

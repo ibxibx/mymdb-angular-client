@@ -2,7 +2,7 @@
 <nav *ngIf="isLoggedIn() && !isWelcomePage()" class="navigation-bar">
   <div class="nav-content">
     <div class="logo-container">
-      <img src="/assets/mymdb-logo.png" alt="MyMDB Logo" class="nav-logo" />
+      <img [src]="logoPath" alt="MyMDB Logo" class="nav-logo" />
     </div>
 
     <div class="nav-links">

@@ -1,7 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { UserRegistrationFormComponent } from '../user-registration-form/user-registration-form.component';
 import { UserLoginFormComponent } from '../user-login-form/user-login-form.component';
-import { MatDialog } from '@angular/material/dialog';
+import {
+  MatDialog,
+  MatDialogRef,
+  MatDialogModule,
+} from '@angular/material/dialog';
 import { RouterOutlet } from '@angular/router';
 import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
@@ -14,6 +18,7 @@ import { NavigationComponent } from '../navigation/navigation.component';
   imports: [
     MatCardModule,
     MatButtonModule,
+    MatDialogModule,
     RouterOutlet,
     UserRegistrationFormComponent,
     UserLoginFormComponent,
@@ -27,17 +32,15 @@ export class WelcomePageComponent implements OnInit {
   constructor(public dialog: MatDialog) {}
   ngOnInit(): void {}
 
-  // Function opening the Sign Up Dialog
   openUserRegistrationDialog(): void {
     this.dialog.open(UserRegistrationFormComponent, {
       width: '280px',
       autoFocus: true,
-      maxHeight: '90vh', // This prevents the dialog from being taller than the viewport
+      maxHeight: '90vh',
       panelClass: 'custom-dialog-container',
     });
   }
 
-  // Function opening the Login Dialog
   openUserLoginDialog(): void {
     this.dialog.open(UserLoginFormComponent, {
       width: '280px',
@@ -47,10 +50,37 @@ export class WelcomePageComponent implements OnInit {
     });
   }
 
-  // Function opening the Movies Dialog
   openMoviesDialog(): void {
-    this.dialog.open(MovieCardComponent, {
-      width: '500px',
+    const dialogRef = this.dialog.open(LoginPromptDialog, {
+      width: '300px',
+      hasBackdrop: true,
+      disableClose: false,
+      autoFocus: true,
     });
   }
+}
+
+@Component({
+  selector: 'login-prompt-dialog',
+  standalone: true,
+  imports: [MatDialogModule, MatButtonModule],
+  template: `
+    <div style="padding: 24px;">
+      <div
+        class="mat-dialog-title"
+        style="font-weight: bold; margin-bottom: 16px;"
+      >
+        Access Required
+      </div>
+      <div class="mat-dialog-content" style="margin-bottom: 24px;">
+        Please log in or sign up in order to view the movies
+      </div>
+      <div class="mat-dialog-actions" align="end">
+        <button mat-button (click)="dialogRef.close()">OK</button>
+      </div>
+    </div>
+  `,
+})
+export class LoginPromptDialog {
+  constructor(public dialogRef: MatDialogRef<LoginPromptDialog>) {}
 }

@@ -1,27 +1,93 @@
-# MymdbAngularClient
+# 🎬 MyMDB - My Movie Database Client
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.10.
+## 📋 Project Overview
+MyMDB is a client-side application built with Angular that interfaces with a movie API. It allows users to browse, search, and manage their favorite movies from Ian's collection, while maintaining their own watchlist and profile information.
 
-## Development server
+![Welcome Page](assets/welcome.jpg)
+![Movies Overview](assets/movies.jpg)
+![User Profile](assets/user_profile.jpg)
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## 🌟 Features
+- User registration and authentication
+- Movie browsing with detailed information
+- Profile management
+- Favorite movies functionality
+- Responsive design for mobile and desktop
+- Material Design interface
 
-## Code scaffolding
+## 💻 Technologies Used
+- **Frontend Framework:** Angular 17
+- **UI Components:** Angular Material
+- **Styling:** SCSS
+- **State Management:** RxJS
+- **Authentication:** JWT (JSON Web Tokens)
+- **HTTP Communication:** Angular HttpClient
+- **Form Management:** Angular Reactive Forms
+- **Development Tools:**
+  - TypeScript
+  - Angular CLI
+  - npm
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## 🛠️ Technical Requirements
+- Node.js (version 18 or later)
+- Angular CLI (version 17 or later)
+- Modern web browser with JavaScript enabled
 
-## Build
+## 🔗 Links
+- [Live Demo](https://mymdb-angular.netlify.app)
+- [API Documentation](https://mymdb-api.herokuapp.com/documentation)
+- [GitHub Repository](https://github.com/ibxibx/mymdb-angular-client)
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## 🚀 Setup Instructions
+1. **Clone Repository**
+   ```bash
+   git clone https://github.com/ibxibx/mymdb-angular-client.git
+   cd mymdb-angular-client
+   ```
 
-## Running unit tests
+2. **Install Dependencies**
+   ```bash
+   npm install
+   ```
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+3. **Environment Setup**
+   - Create `environment.ts` file in `src/environments/`
+   - Add API URL configuration:
+     ```typescript
+     export const environment = {
+       production: false,
+       apiUrl: 'YOUR_API_URL'
+     };
+     ```
 
-## Running end-to-end tests
+4. **Start Development Server**
+   ```bash
+   ng serve
+   ```
+   Navigate to `http://localhost:4200/`
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+## 💭 Project Reflection
+### Role & Responsibilities
+- Full-stack development with focus on frontend implementation
+- Design and implementation of user interface components
+- Integration with REST API
+- Implementation of user authentication and authorization
 
-## Further help
+### Key Decisions & Outcomes
+- Chose Angular Material for UI components to ensure consistency
+- Implemented responsive design for better mobile experience
+- Used JWT for secure authentication
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+### Lessons Learned
+- Enhanced understanding of Angular's component architecture
+- Improved skills in state management with RxJS
+- Gained experience in implementing secure authentication
+
+### Future Improvements
+- Add movie recommendation system
+- Implement social features
+- Enhance search functionality
+- Add offline capabilities
+
+## 📜 License
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details.
