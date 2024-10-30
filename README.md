@@ -1,19 +1,11 @@
 # 🎬 MyMDB - My Movie Database Client
 
+[![Angular](https://img.shields.io/badge/Angular-DD0031?style=for-the-badge&logo=angular&logoColor=white)](https://angular.io/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
+[![Material UI](https://img.shields.io/badge/Material_UI-0081CB?style=for-the-badge&logo=material-ui&logoColor=white)](https://material.angular.io/)
+
 ## 📋 Project Overview
-MyMDB is a client-side application built with Angular that interfaces with a movie API. It allows users to browse, search, and manage their favorite movies from Ian's collection, while maintaining their own watchlist and profile information.
-
-![Welcome Page](assets/welcome.jpg)
-![Movies Overview](assets/movies.jpg)
-![User Profile](assets/user_profile.jpg)
-
-## 🌟 Features
-- User registration and authentication
-- Movie browsing with detailed information
-- Profile management
-- Favorite movies functionality
-- Responsive design for mobile and desktop
-- Material Design interface
+MyMDB is a client-side application built with Angular that interfaces with a movie API. It allows users to browse, search, and manage their favorite movies while maintaining their own watchlist and profile information.
 
 ## 💻 Technologies Used
 - **Frontend Framework:** Angular 17
@@ -28,13 +20,26 @@ MyMDB is a client-side application built with Angular that interfaces with a mov
   - Angular CLI
   - npm
 
+## 🌟 Features
+- User registration and authentication
+- Movie browsing with detailed information
+- Profile management
+- Favorite movies functionality
+- Responsive design for mobile and desktop
+- Material Design interface
+
+## 📸 Project Screenshots
+![Welcome Page](src/assets/welcome.jpg)
+![Movies Overview](src/assets/movies.jpg)
+![User Profile](src/assets/user_profile.jpg)
+
 ## 🛠️ Technical Requirements
 - Node.js (version 18 or later)
 - Angular CLI (version 17 or later)
 - Modern web browser with JavaScript enabled
 
 ## 🔗 Links
-- [Live Demo](https://mymdb-angular.netlify.app)
+- [Live Demo](https://ibxibx.github.io/mymdb-angular-client/)
 - [API Documentation](https://mymdb-api.herokuapp.com/documentation)
 - [GitHub Repository](https://github.com/ibxibx/mymdb-angular-client)
 
