@@ -31,6 +31,7 @@ MyMDB is a client-side application built with Angular that interfaces with a mov
 ## 📸 Project Screenshots
 ![Welcome Page](src/assets/welcome.jpg)
 ![Movies Overview](src/assets/movies.jpg)
+![Movie Details](src/assets/movie_dialog.jpg)
 ![User Profile](src/assets/user_profile.jpg)
 
 ## 🛠️ Technical Requirements
