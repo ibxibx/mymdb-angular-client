@@ -1,5 +1,15 @@
-// movie-card.component.scss
+/**
+ * @fileoverview Styles for the movie card component
+ * @description Contains responsive styling for movie cards grid and individual cards
+ * @sass
+ */
+
+/** 
+ * @section Movie Grid Container
+ * @description Main grid container using CSS Grid for responsive layout
+ */
 .movie-grid {
+  /** Container using CSS Grid for responsive layout */
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
   gap: 20px;
@@ -7,17 +17,29 @@
   max-width: 1200px;
   margin: 0 auto;
 
+  /** 
+   * @section Movie Card
+   * @description Individual movie card styles and layout
+   */
   mat-card {
     height: 100%;
     display: flex;
     flex-direction: column;
 
+    /** 
+     * @subsection Movie Poster
+     * @description Movie poster image container styles
+     */
     img {
       width: 100%;
       height: 400px;
       object-fit: cover;
     }
 
+    /** 
+     * @subsection Card Header
+     * @description Card header containing title and subtitle
+     */
     mat-card-header {
       height: 80px;
       overflow: hidden;
@@ -32,6 +54,10 @@
       }
     }
 
+    /** 
+     * @subsection Action Buttons
+     * @description Action buttons container styles
+     */
     mat-card-actions {
       margin-top: auto;
       padding: 8px;
@@ -51,7 +77,15 @@
   }
 }
 
-// Responsive adjustments
+/** 
+ * @section Responsive Layouts
+ * @description Media queries for different screen sizes
+ */
+
+/** 
+ * @subsection Mobile Layout
+ * @description Adjustments for mobile screens
+ */
 @media (max-width: 599px) {
   .movie-grid {
     grid-template-columns: 1fr;
@@ -59,6 +93,10 @@
   }
 }
 
+/** 
+ * @subsection Tablet Layout
+ * @description Adjustments for tablet screens
+ */
 @media (min-width: 600px) and (max-width: 959px) {
   .movie-grid {
     grid-template-columns: repeat(2, 1fr);

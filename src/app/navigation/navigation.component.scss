@@ -1,9 +1,19 @@
+/**
+ * @fileoverview Styles for the navigation component
+ * @description Contains responsive styling for the navigation bar and its elements
+ * @author [Your Name] - Optional, you can add this
+ * @version 1.0.0 - Optional, you can add this
+ * @sass
+ */
+
+/* Navigation Bar Container */
 .navigation-bar {
   background-color: #212429;
   width: 100%;
   padding: 0.5rem 0;
 }
 
+/* Main Navigation Content */
 .nav-content {
   max-width: 1200px;
   margin: 0 auto;
@@ -13,10 +23,12 @@
   padding: 0 2rem;
 }
 
+/* Logo Container */
 .logo-container {
   padding: 0.5rem 0;
 }
 
+/* Logo Image */
 .nav-logo {
   height: 100px;
   width: 100px;
@@ -24,6 +36,7 @@
   padding: 4px;
 }
 
+/* Navigation Links */
 .nav-links {
   display: flex;
   gap: calc(1 * (4ch + 1rem)); // Double the average word length plus padding
@@ -48,7 +61,7 @@
   }
 }
 
-// Responsive design
+/* Media Queries for Responsive Design */
 @media (max-width: 768px) {
   .nav-content {
     padding: 0 1rem;

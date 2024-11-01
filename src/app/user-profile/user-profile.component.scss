@@ -1,4 +1,12 @@
-/* user-profile.component.scss */
+/**
+ * @fileoverview Styles for user profile component
+ * @description Contains responsive styling for profile and favorites sections
+ */
+
+/** 
+ * @description Main container layout
+ * @property {display} grid - Two-column grid layout
+ */
 .profile-container {
   padding: 20px;
   max-width: 1200px;
@@ -8,11 +16,17 @@
   gap: 20px;
 }
 
+/** 
+ * @description Profile section styles
+ */
 .profile-section {
   mat-card {
     padding: 20px;
   }
 
+  /** 
+ * @description Profile information display styles
+ */
   .profile-info {
     margin: 20px 0;
 
@@ -23,6 +37,9 @@
   }
 
   // Shared button styles for both profile actions and edit form
+  /** 
+ * @description Action button styles
+ */
   .profile-actions,
   .form-actions {
     margin-top: 16px;
@@ -44,6 +61,9 @@
     }
   }
 
+  /** 
+ * @description Edit form styles
+ */
   .edit-form {
     display: flex;
     flex-direction: column;
@@ -76,6 +96,9 @@
   }
 }
 
+/** 
+ * @description Favorites section styles
+ */
 .favorites-section {
   h2 {
     margin-bottom: 20px;
@@ -118,6 +141,10 @@
   }
 }
 
+/** 
+ * @description Responsive design adjustments
+ * @media Tablets and mobile devices
+ */
 @media (max-width: 768px) {
   .profile-container {
     grid-template-columns: 1fr;

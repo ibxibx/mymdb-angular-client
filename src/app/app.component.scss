@@ -1,3 +1,14 @@
+/**
+ * @fileoverview Main application component styles
+ * @description Contains styles for the main page layout and navigation bar
+ * @sass
+ */
+
+/** 
+ * @section Main Page
+ * @description Styles for the main page container and its elements
+ */
+
 .main-page {
   text-align: center;
   padding: 2rem;
@@ -17,6 +28,10 @@
   }
 }
 
+/** 
+ * @section Navigation Bar
+ * @description Styles for the application's navigation bar
+ */
 .navbar {
   margin-bottom: 1rem;
 

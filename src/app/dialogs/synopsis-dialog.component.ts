@@ -1,7 +1,30 @@
+/**
+ * @fileoverview Movie synopsis dialog component implementation
+ * @module SynopsisDialog
+ */
+
 import { Component, Inject } from '@angular/core';
 import { MAT_DIALOG_DATA, MatDialogModule } from '@angular/material/dialog';
 import { MatButtonModule } from '@angular/material/button';
 
+/**
+ * @interface SynopsisData
+ * @description Interface defining the structure of synopsis data passed to the dialog
+ */
+interface SynopsisData {
+  /** The title of the movie */
+  title: string;
+  /** The movie's synopsis */
+  description: string;
+  /** Array of actor names in the movie */
+  actors: string[];
+}
+
+/**
+ * @class SynopsisDialogComponent
+ * @description Modal dialog component that displays a movie's synopsis and cast information
+ * @extends {Component}
+ */
 @Component({
   selector: 'app-synopsis-dialog',
   template: `
@@ -45,12 +68,13 @@ import { MatButtonModule } from '@angular/material/button';
   imports: [MatDialogModule, MatButtonModule],
 })
 export default class SynopsisDialogComponent {
+  /**
+   * @constructor
+   * @param {SynopsisData} data - The movie synopsis data to be displayed in the dialog
+   * @description Initializes the dialog with injected synopsis data
+   */
   constructor(
     @Inject(MAT_DIALOG_DATA)
-    public data: {
-      title: string;
-      description: string;
-      actors: string[];
-    }
+    public data: SynopsisData
   ) {}
 }

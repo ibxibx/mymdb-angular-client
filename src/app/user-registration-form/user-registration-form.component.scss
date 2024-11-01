@@ -1,3 +1,12 @@
+/**
+ * @fileoverview Styles for user registration form
+ * @description Contains styles for the registration card and form elements
+ */
+
+/** 
+ * @description Card container styles
+ * @property {max-width} none - Full width card
+ */
 mat-card {
   max-width: none;
   margin: 0;
@@ -5,6 +14,10 @@ mat-card {
   box-shadow: none;
 }
 
+/** 
+ * @description Form field styles
+ * @property {width} 100% - Full width form fields
+ */
 mat-form-field {
   width: 100%;
   margin-bottom: 16px;
@@ -13,6 +26,10 @@ mat-form-field {
   }
 }
 
+/** 
+ * @description Action buttons container
+ * @property {display} flex - Flexible layout for buttons
+ */
 mat-card-actions {
   padding: 0;
   margin: 0;
@@ -21,21 +38,34 @@ mat-card-actions {
   gap: 8px;
 }
 
+/** 
+ * @description Card header styles
+ */
 mat-card-header {
   padding: 0;
   margin-bottom: 16px;
 }
 
+/** 
+ * @description Card content container
+ */
 mat-card-content {
   padding: 0;
   margin: 0;
 }
 
+/** 
+ * @description Form container styles
+ * @property {display} flex - Vertical flex layout
+ */
 form {
   display: flex;
   flex-direction: column;
 }
 
+/** 
+ * @description Button styles
+ */
 button {
-  margin: 0;  // Override the previous margin-right
+  margin: 0; // Override the previous margin-right
 }

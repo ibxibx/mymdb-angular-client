@@ -1,3 +1,8 @@
+/**
+ * @fileoverview Main application module configuration
+ * @module AppModule
+ */
+
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
@@ -24,6 +29,10 @@ import { WelcomePageComponent } from './welcome-page/welcome-page.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
 import { NavigationComponent } from './navigation/navigation.component';
 
+/**
+ * @constant {Routes} appRoutes
+ * @description Application route configurations
+ */
 const appRoutes: Routes = [
   { path: 'welcome', component: WelcomePageComponent },
   { path: 'movies', component: MovieCardComponent },
@@ -31,6 +40,11 @@ const appRoutes: Routes = [
   { path: '', redirectTo: 'welcome', pathMatch: 'prefix' },
 ];
 
+/**
+ * @class AppModule
+ * @description Root module of the application
+ * @extends {NgModule}
+ */
 @NgModule({
   declarations: [
     AppComponent,

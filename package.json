@@ -6,7 +6,8 @@
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "docs": "typedoc --tsconfig tsconfig.json"
   },
   "private": true,
   "dependencies": {
@@ -28,14 +29,22 @@
     "@angular-devkit/build-angular": "^18.2.10",
     "@angular/cli": "^18.2.10",
     "@angular/compiler-cli": "^18.2.0",
+    "@babel/plugin-proposal-decorators": "^7.22.0",
+    "@babel/plugin-syntax-decorators": "^7.25.9",
+    "@babel/preset-env": "^7.26.0",
+    "@babel/preset-typescript": "^7.26.0",
     "@types/jasmine": "~5.1.0",
     "angular-cli-ghpages": "^2.0.3",
+    "docdash": "^2.0.2",
     "jasmine-core": "~5.2.0",
+    "jsdoc": "^4.0.4",
+    "jsdoc-babel": "^0.5.0",
     "karma": "~6.4.0",
     "karma-chrome-launcher": "~3.2.0",
     "karma-coverage": "~2.2.0",
     "karma-jasmine": "~5.1.0",
     "karma-jasmine-html-reporter": "~2.1.0",
+    "typedoc": "^0.25.8",
     "typescript": "~5.5.2"
   }
 }

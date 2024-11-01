@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="utf-8">
+    <title>user-profile/user-profile.component.ts - Documentation</title>
+    
+    
+    <script src="scripts/prettify/prettify.js"></script>
+    <script src="scripts/prettify/lang-css.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc.css">
+    <script src="scripts/nav.js" defer></script>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+<input type="checkbox" id="nav-trigger" class="nav-trigger" />
+<label for="nav-trigger" class="navicon-button x">
+  <div class="navicon"></div>
+</label>
+
+<label for="nav-trigger" class="overlay"></label>
+
+<nav >
+    
+    
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="-_class.html">_class</a><ul class='methods'><li data-type='method'><a href="-_class.html#ngOnInit">ngOnInit</a></li><li data-type='method'><a href="-_class.html#openMoviesDialog">openMoviesDialog</a></li><li data-type='method'><a href="-_class.html#openUserLoginDialog">openUserLoginDialog</a></li><li data-type='method'><a href="-_class.html#openUserRegistrationDialog">openUserRegistrationDialog</a></li></ul></li><li><a href="-_class2.html">_class2</a></li><li><a href="module-AppComponent-AppComponent.html">AppComponent</a></li><li><a href="module-AppModule-AppModule.html">AppModule</a></li><li><a href="module-AppRoutingModule-AppRoutingModule.html">AppRoutingModule</a></li><li><a href="module-DirectorDialog-DirectorDialogComponent.html">DirectorDialogComponent</a></li><li><a href="module-DirectorDialog-_class.html">_class</a></li><li><a href="module-FetchApiDataService-FetchApiDataService.html">FetchApiDataService</a></li><li><a href="module-FetchApiDataService-_class.html">_class</a></li><li><a href="module-GenreDialog-GenreDialogComponent.html">GenreDialogComponent</a></li><li><a href="module-GenreDialog-_class.html">_class</a></li><li><a href="module-MovieCard-MovieCardComponent.html">MovieCardComponent</a></li><li><a href="module-MovieCard-_class.html">_class</a><ul class='methods'><li data-type='method'><a href="module-MovieCard-_class.html#getMovies">getMovies</a></li><li data-type='method'><a href="module-MovieCard-_class.html#isFavorite">isFavorite</a></li><li data-type='method'><a href="module-MovieCard-_class.html#loadUserData">loadUserData</a></li><li data-type='method'><a href="module-MovieCard-_class.html#openDirectorDialog">openDirectorDialog</a></li><li data-type='method'><a href="module-MovieCard-_class.html#openGenreDialog">openGenreDialog</a></li><li data-type='method'><a href="module-MovieCard-_class.html#openSynopsisDialog">openSynopsisDialog</a></li><li data-type='method'><a href="module-MovieCard-_class.html#toggleFavorite">toggleFavorite</a></li></ul></li><li><a href="module-Navigation-NavigationComponent.html">NavigationComponent</a></li><li><a href="module-Navigation-_class.html">_class</a></li><li><a href="module-SynopsisDialog-SynopsisDialogComponent.html">SynopsisDialogComponent</a></li><li><a href="module-SynopsisDialog-_class.html">_class</a></li><li><a href="module-UserLoginForm-UserLoginFormComponent.html">UserLoginFormComponent</a></li><li><a href="module-UserLoginForm-_class2.html">_class2</a></li><li><a href="module-UserProfile-UserProfileComponent.html">UserProfileComponent</a></li><li><a href="module-UserProfile-_class.html">_class</a></li><li><a href="module-UserRegistrationForm-UserRegistrationFormComponent.html">UserRegistrationFormComponent</a></li><li><a href="module-UserRegistrationForm-_class2.html">_class2</a></li></ul><h3>Modules</h3><ul><li><a href="module-AppComponent.html">AppComponent</a><ul class='methods'><li data-type='method'><a href="module-AppComponent.html#~isLoggedIn">isLoggedIn</a></li><li data-type='method'><a href="module-AppComponent.html#~logout">logout</a></li></ul></li><li><a href="module-AppConfig.html">AppConfig</a></li><li><a href="module-AppModule.html">AppModule</a></li><li><a href="module-AppRoutes.html">AppRoutes</a><ul class='methods'><li data-type='method'><a href="module-AppRoutes.html#~authGuard">authGuard</a></li></ul></li><li><a href="module-AppRoutingModule.html">AppRoutingModule</a></li><li><a href="module-DirectorDialog.html">DirectorDialog</a></li><li><a href="module-FetchApiDataService.html">FetchApiDataService</a><ul class='methods'><li data-type='method'><a href="module-FetchApiDataService.html#~addFavoriteMovie">addFavoriteMovie</a></li><li data-type='method'><a href="module-FetchApiDataService.html#~deleteUser">deleteUser</a></li><li data-type='method'><a href="module-FetchApiDataService.html#~editUser">editUser</a></li><li data-type='method'><a href="module-FetchApiDataService.html#~extractResponseData">extractResponseData</a></li><li data-type='method'><a href="module-FetchApiDataService.html#~getAllMovies">getAllMovies</a></li><li data-type='method'><a href="module-FetchApiDataService.html#~getDirector">getDirector</a></li><li data-type='method'><a href="module-FetchApiDataService.html#~getFavoriteMovies">getFavoriteMovies</a></li><li data-type='method'><a href="module-FetchApiDataService.html#~getGenre">getGenre</a></li><li data-type='method'><a href="module-FetchApiDataService.html#~getMovieByTitle">getMovieByTitle</a></li><li data-type='method'><a href="module-FetchApiDataService.html#~getOneMovie">getOneMovie</a></li><li data-type='method'><a href="module-FetchApiDataService.html#~getUser">getUser</a></li><li data-type='method'><a href="module-FetchApiDataService.html#~handleError">handleError</a></li><li data-type='method'><a href="module-FetchApiDataService.html#~removeFavoriteMovie">removeFavoriteMovie</a></li><li data-type='method'><a href="module-FetchApiDataService.html#~userLogin">userLogin</a></li><li data-type='method'><a href="module-FetchApiDataService.html#~userRegistration">userRegistration</a></li></ul></li><li><a href="module-GenreDialog.html">GenreDialog</a></li><li><a href="module-MovieCard.html">MovieCard</a><ul class='methods'><li data-type='method'><a href="module-MovieCard.html#~ngOnInit">ngOnInit</a></li></ul></li><li><a href="module-Navigation.html">Navigation</a><ul class='methods'><li data-type='method'><a href="module-Navigation.html#~isLoggedIn">isLoggedIn</a></li><li data-type='method'><a href="module-Navigation.html#~isWelcomePage">isWelcomePage</a></li><li data-type='method'><a href="module-Navigation.html#~logout">logout</a></li></ul></li><li><a href="module-SynopsisDialog.html">SynopsisDialog</a></li><li><a href="module-UserLoginForm.html">UserLoginForm</a><ul class='methods'><li data-type='method'><a href="module-UserLoginForm.html#~loginUser">loginUser</a></li><li data-type='method'><a href="module-UserLoginForm.html#~ngOnInit">ngOnInit</a></li></ul></li><li><a href="module-UserProfile.html">UserProfile</a><ul class='methods'><li data-type='method'><a href="module-UserProfile.html#~deleteAccount">deleteAccount</a></li><li data-type='method'><a href="module-UserProfile.html#~getUser">getUser</a></li><li data-type='method'><a href="module-UserProfile.html#~loadFavoriteMovies">loadFavoriteMovies</a></li><li data-type='method'><a href="module-UserProfile.html#~ngOnInit">ngOnInit</a></li><li data-type='method'><a href="module-UserProfile.html#~openDirectorDialog">openDirectorDialog</a></li><li data-type='method'><a href="module-UserProfile.html#~openGenreDialog">openGenreDialog</a></li><li data-type='method'><a href="module-UserProfile.html#~openSynopsisDialog">openSynopsisDialog</a></li><li data-type='method'><a href="module-UserProfile.html#~removeFavorite">removeFavorite</a></li><li data-type='method'><a href="module-UserProfile.html#~toggleEditMode">toggleEditMode</a></li><li data-type='method'><a href="module-UserProfile.html#~updateUser">updateUser</a></li></ul></li><li><a href="module-UserRegistrationForm.html">UserRegistrationForm</a><ul class='methods'><li data-type='method'><a href="module-UserRegistrationForm.html#~ngOnInit">ngOnInit</a></li><li data-type='method'><a href="module-UserRegistrationForm.html#~registerUser">registerUser</a></li></ul></li></ul><h3>Interfaces</h3><ul><li><a href="module-DirectorDialog-DirectorData.html">DirectorData</a></li><li><a href="module-GenreDialog-GenreData.html">GenreData</a></li><li><a href="module-MovieCard-Director.html">Director</a></li><li><a href="module-MovieCard-Genre.html">Genre</a></li><li><a href="module-MovieCard-Movie.html">Movie</a></li><li><a href="module-SynopsisDialog-SynopsisData.html">SynopsisData</a></li><li><a href="module-UserLoginForm-UserData.html">UserData</a></li><li><a href="module-UserProfile-User.html">User</a></li><li><a href="module-UserRegistrationForm-UserRegistrationData.html">UserRegistrationData</a></li></ul><h3>Global</h3><ul><li><a href="global.html#LoginPromptDialog">LoginPromptDialog</a></li><li><a href="global.html#WelcomePageComponent">WelcomePageComponent</a></li></ul>
+    
+</nav>
+
+<div id="main">
+    
+    <h1 class="page-title">user-profile/user-profile.component.ts</h1>
+    
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>/**
+ * @fileoverview Component for managing user profile information and favorite movies
+ * @module UserProfile
+ */
+import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { FetchApiDataService } from '../fetch-api-data.service';
+import { MatSnackBar } from '@angular/material/snack-bar';
+import { MatDialog } from '@angular/material/dialog';
+import { CommonModule } from '@angular/common';
+import { MatCardModule } from '@angular/material/card';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
+import { FormsModule } from '@angular/forms';
+import { NavigationComponent } from '../navigation/navigation.component';
+import GenreDialogComponent from '../dialogs/genre-dialog.component';
+import DirectorDialogComponent from '../dialogs/director-dialog.component';
+import SynopsisDialogComponent from '../dialogs/synopsis-dialog.component';
+
+/**
+ * @interface User
+ * @description User profile data structure
+ */
+interface User {
+  _id?: string;
+  Username: string;
+  Password: string;
+  Email: string;
+  Birthday: string;
+}
+
+/**
+ * @class UserProfileComponent
+ * @description Component for displaying and managing user profile and favorite movies
+ * @implements {OnInit}
+ * @selector app-user-profile
+ * @standalone
+ */
+
+@Component({
+  selector: 'app-user-profile',
+  templateUrl: './user-profile.component.html',
+  styleUrls: ['./user-profile.component.scss'],
+  standalone: true,
+  imports: [
+    CommonModule,
+    MatCardModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatButtonModule,
+    MatIconModule,
+    FormsModule,
+    NavigationComponent,
+    GenreDialogComponent,
+    DirectorDialogComponent,
+    SynopsisDialogComponent,
+  ],
+})
+export class UserProfileComponent implements OnInit {
+  /** @property {User} user - Current user's profile data */
+  user: any = {};
+  /** @property {boolean} editMode - Controls profile edit mode visibility */
+  editMode: boolean = false;
+  /** @property {Array&lt;any>} favoriteMovies - User's favorite movies list */
+  favoriteMovies: any[] = [];
+  /** @property {User} updatedUser - Temporary storage for profile updates */
+  updatedUser = {
+    Username: '',
+    Password: '',
+    Email: '',
+    Birthday: '',
+  };
+
+  /**
+   * @constructor
+   * @param {FetchApiDataService} fetchApiData - Service for API calls
+   * @param {MatDialog} dialog - Service for dialog windows
+   * @param {MatSnackBar} snackBar - Service for notifications
+   * @param {Router} router - Angular router service
+   */
+  constructor(
+    public fetchApiData: FetchApiDataService,
+    public dialog: MatDialog,
+    public snackBar: MatSnackBar,
+    private router: Router
+  ) {}
+
+  /**
+   * @method ngOnInit
+   * @description Initializes component by loading user data and favorites
+   * @returns {void}
+   */
+  ngOnInit(): void {
+    this.getUser();
+    this.loadFavoriteMovies();
+  }
+
+  /**
+   * @method getUser
+   * @description Fetches current user's profile data
+   * @returns {void}
+   * @throws {Error} When user ID is not found
+   */
+  getUser(): void {
+    const user = JSON.parse(localStorage.getItem('user') || '{}');
+    const userId = user._id;
+
+    if (!userId) {
+      this.snackBar.open('User ID not found. Please login again.', 'OK', {
+        duration: 2000,
+      });
+      this.router.navigate(['/welcome']);
+      return;
+    }
+
+    this.fetchApiData.getUser(userId).subscribe((resp: any) => {
+      this.user = resp;
+      this.updatedUser = {
+        Username: this.user.Username,
+        Password: '',
+        Email: this.user.Email,
+        Birthday: this.user.Birthday,
+      };
+    });
+  }
+
+  /**
+   * @method loadFavoriteMovies
+   * @description Loads user's favorite movies list
+   * @returns {void}
+   */
+  loadFavoriteMovies(): void {
+    const user = JSON.parse(localStorage.getItem('user') || '{}');
+    if (user._id) {
+      // First get the user's favorite movie IDs
+      this.fetchApiData.getFavoriteMovies(user._id).subscribe((favoriteIds) => {
+        // Then get all movies
+        this.fetchApiData.getAllMovies().subscribe((movies) => {
+          // Filter movies to only include favorites
+          this.favoriteMovies = movies.filter((movie: any) =>
+            favoriteIds.includes(movie._id)
+          );
+        });
+      });
+    }
+  }
+
+  /**
+   * @method toggleEditMode
+   * @description Toggles profile edit mode
+   * @returns {void}
+   */
+  toggleEditMode(): void {
+    this.editMode = !this.editMode;
+  }
+
+  /**
+   * @method updateUser
+   * @description Updates user profile information
+   * @returns {void}
+   * @throws {Error} When update fails
+   */
+  updateUser(): void {
+    const user = JSON.parse(localStorage.getItem('user') || '{}');
+    const userId = user._id;
+
+    if (!userId) {
+      this.snackBar.open('User ID not found. Please login again.', 'OK', {
+        duration: 2000,
+      });
+      this.router.navigate(['/welcome']);
+      return;
+    }
+
+    this.fetchApiData.editUser(userId, this.updatedUser).subscribe({
+      next: (result) => {
+        this.user = result;
+        localStorage.setItem('user', JSON.stringify(result));
+        this.snackBar.open('Profile updated successfully!', 'OK', {
+          duration: 2000,
+        });
+        this.editMode = false;
+      },
+      error: (error) => {
+        this.snackBar.open(error.message, 'OK', {
+          duration: 2000,
+        });
+      },
+    });
+  }
+
+  /**
+   * @method deleteAccount
+   * @description Handles user account deletion
+   * @returns {void}
+   * @throws {Error} When deletion fails
+   */
+  deleteAccount(): void {
+    if (
+      confirm(
+        'Are you sure you want to delete your account? This cannot be undone.'
+      )
+    ) {
+      const user = JSON.parse(localStorage.getItem('user') || '{}');
+      const userId = user._id;
+
+      if (!userId) {
+        this.snackBar.open('User ID not found. Please login again.', 'OK', {
+          duration: 2000,
+        });
+        this.router.navigate(['/welcome']);
+        return;
+      }
+
+      this.fetchApiData.deleteUser(userId).subscribe({
+        next: () => {
+          localStorage.clear();
+          this.router.navigate(['/welcome']);
+          this.snackBar.open('Account deleted successfully!', 'OK', {
+            duration: 2000,
+          });
+        },
+        error: (error) => {
+          this.snackBar.open(error.message, 'OK', {
+            duration: 2000,
+          });
+        },
+      });
+    }
+  }
+
+  /**
+   * @method removeFavorite
+   * @description Removes a movie from user's favorites
+   * @param {string} movieId - ID of movie to remove
+   * @returns {void}
+   */
+  removeFavorite(movieId: string): void {
+    const user = JSON.parse(localStorage.getItem('user') || '{}');
+    if (user._id) {
+      this.fetchApiData.removeFavoriteMovie(user._id, movieId).subscribe(() => {
+        this.snackBar.open('Movie removed from favorites', 'OK', {
+          duration: 2000,
+        });
+        this.loadFavoriteMovies(); // Reload the favorites list
+      });
+    }
+  }
+
+  /**
+   * @method openGenreDialog
+   * @description Opens dialog with genre information
+   * @param {any} genre - Genre data to display
+   * @returns {void}
+   */
+  openGenreDialog(genre: any): void {
+    this.dialog.open(GenreDialogComponent, {
+      width: '400px',
+      data: genre,
+    });
+  }
+
+  /**
+   * @method openDirectorDialog
+   * @description Opens dialog with director information
+   * @param {any} genre - Director data to display
+   * @returns {void}
+   */
+  openDirectorDialog(director: any): void {
+    this.dialog.open(DirectorDialogComponent, {
+      width: '400px',
+      data: director,
+    });
+  }
+
+  /**
+   * @method openSynopsisDialog
+   * @description Opens dialog with synopsis information
+   * @param {any} genre - Synopsis data to display
+   * @returns {void}
+   */
+  openSynopsisDialog(movie: any): void {
+    this.dialog.open(SynopsisDialogComponent, {
+      width: '400px',
+      data: {
+        title: movie.Title,
+        description: movie.Description,
+        actors: movie.Actors,
+      },
+    });
+  }
+}
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+    
+    
+</div>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 4.0.4</a> on Fri Nov 01 2024 16:21:35 GMT+0100 (Central European Standard Time) using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
+</footer>
+
+<script>prettyPrint();</script>
+<script src="scripts/polyfill.js"></script>
+<script src="scripts/linenumber.js"></script>
+
+
+
+</body>
+</html>

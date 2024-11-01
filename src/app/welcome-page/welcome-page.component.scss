@@ -1,3 +1,11 @@
+/**
+ * @fileoverview Styles for the welcome page component
+ */
+
+/**
+ * Main container for the welcome page
+ * Centers content vertically and horizontally with a column layout
+ */
 .main-page {
   display: flex;
   flex-direction: column;
@@ -8,6 +16,7 @@
   background-color: #f5f5f5;
   text-align: center;
 
+  /** Main heading styles with drop shadow */
   h1 {
     color: #333;
     margin-bottom: 2rem;
@@ -16,6 +25,10 @@
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
   }
 
+  /**
+   * Container for action buttons
+   * Displays buttons in a vertical stack with consistent spacing
+   */
   .button-group {
     display: flex;
     flex-direction: column;
@@ -51,7 +64,10 @@
   }
 }
 
-// Media query for smaller screens
+/**
+ * Responsive styles for mobile devices
+ * Adjusts spacing and font sizes for smaller screens
+ */
 @media (max-width: 480px) {
   .main-page {
     padding: 16px;

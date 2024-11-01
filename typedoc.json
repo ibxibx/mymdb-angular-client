@@ -1,0 +1,16 @@
+{
+  "entryPointStrategy": "expand",
+  "entryPoints": ["src"],
+  "out": "docs/typedoc",
+  "exclude": ["**/*+(index|.spec|.e2e).ts", "**/node_modules/**"],
+  "excludePrivate": true,
+  "excludeProtected": false,
+  "excludeExternals": true,
+  "theme": "default",
+  "name": "MyMDB Angular Client Documentation",
+  "hideGenerator": true,
+  "categorizeByGroup": true,
+  "categoryOrder": ["Components", "Services", "Models", "*"],
+  "readme": "none",
+  "tsconfig": "./tsconfig.json"
+}

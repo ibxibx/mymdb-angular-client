@@ -1,7 +1,28 @@
+/**
+ * @fileoverview Genre information dialog component implementation
+ * @module GenreDialog
+ */
+
 import { Component, Inject } from '@angular/core';
 import { MAT_DIALOG_DATA, MatDialogModule } from '@angular/material/dialog';
 import { MatButtonModule } from '@angular/material/button';
 
+/**
+ * @interface GenreData
+ * @description Interface defining the structure of genre data passed to the dialog
+ */
+interface GenreData {
+  /** The name of the genre */
+  genre: string;
+  /** Detailed description of the genre */
+  description: string;
+}
+
+/**
+ * @class GenreDialogComponent
+ * @description Modal dialog component that displays information about a movie genre
+ * @extends {Component}
+ */
 @Component({
   selector: 'app-genre-dialog',
   template: `
@@ -35,7 +56,13 @@ import { MatButtonModule } from '@angular/material/button';
   imports: [MatDialogModule, MatButtonModule],
 })
 export default class GenreDialogComponent {
+  /**
+   * @constructor
+   * @param {GenreData} data - The genre data to be displayed in the dialog
+   * @description Initializes the dialog with injected genre data
+   */
   constructor(
-    @Inject(MAT_DIALOG_DATA) public data: { genre: string; description: string }
+    @Inject(MAT_DIALOG_DATA)
+    public data: GenreData
   ) {}
 }
