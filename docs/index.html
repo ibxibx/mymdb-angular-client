@@ -1,195 +1,88 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    
-    <meta charset="utf-8">
-    <title>Home - Documentation</title>
-    
-    
-    <script src="scripts/prettify/prettify.js"></script>
-    <script src="scripts/prettify/lang-css.js"></script>
-    <!--[if lt IE 9]>
-      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
-    <link type="text/css" rel="stylesheet" href="styles/prettify.css">
-    <link type="text/css" rel="stylesheet" href="styles/jsdoc.css">
-    <script src="scripts/nav.js" defer></script>
-    
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-</head>
-<body>
-
-<input type="checkbox" id="nav-trigger" class="nav-trigger" />
-<label for="nav-trigger" class="navicon-button x">
-  <div class="navicon"></div>
-</label>
-
-<label for="nav-trigger" class="overlay"></label>
-
-<nav >
-    
-    
-    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="-_class.html">_class</a><ul class='methods'><li data-type='method'><a href="-_class.html#ngOnInit">ngOnInit</a></li><li data-type='method'><a href="-_class.html#openMoviesDialog">openMoviesDialog</a></li><li data-type='method'><a href="-_class.html#openUserLoginDialog">openUserLoginDialog</a></li><li data-type='method'><a href="-_class.html#openUserRegistrationDialog">openUserRegistrationDialog</a></li></ul></li><li><a href="-_class2.html">_class2</a></li><li><a href="module-AppComponent-AppComponent.html">AppComponent</a></li><li><a href="module-AppModule-AppModule.html">AppModule</a></li><li><a href="module-AppRoutingModule-AppRoutingModule.html">AppRoutingModule</a></li><li><a href="module-DirectorDialog-DirectorDialogComponent.html">DirectorDialogComponent</a></li><li><a href="module-DirectorDialog-_class.html">_class</a></li><li><a href="module-FetchApiDataService-FetchApiDataService.html">FetchApiDataService</a></li><li><a href="module-FetchApiDataService-_class.html">_class</a></li><li><a href="module-GenreDialog-GenreDialogComponent.html">GenreDialogComponent</a></li><li><a href="module-GenreDialog-_class.html">_class</a></li><li><a href="module-MovieCard-MovieCardComponent.html">MovieCardComponent</a></li><li><a href="module-MovieCard-_class.html">_class</a><ul class='methods'><li data-type='method'><a href="module-MovieCard-_class.html#getMovies">getMovies</a></li><li data-type='method'><a href="module-MovieCard-_class.html#isFavorite">isFavorite</a></li><li data-type='method'><a href="module-MovieCard-_class.html#loadUserData">loadUserData</a></li><li data-type='method'><a href="module-MovieCard-_class.html#openDirectorDialog">openDirectorDialog</a></li><li data-type='method'><a href="module-MovieCard-_class.html#openGenreDialog">openGenreDialog</a></li><li data-type='method'><a href="module-MovieCard-_class.html#openSynopsisDialog">openSynopsisDialog</a></li><li data-type='method'><a href="module-MovieCard-_class.html#toggleFavorite">toggleFavorite</a></li></ul></li><li><a href="module-Navigation-NavigationComponent.html">NavigationComponent</a></li><li><a href="module-Navigation-_class.html">_class</a></li><li><a href="module-SynopsisDialog-SynopsisDialogComponent.html">SynopsisDialogComponent</a></li><li><a href="module-SynopsisDialog-_class.html">_class</a></li><li><a href="module-UserLoginForm-UserLoginFormComponent.html">UserLoginFormComponent</a></li><li><a href="module-UserLoginForm-_class2.html">_class2</a></li><li><a href="module-UserProfile-UserProfileComponent.html">UserProfileComponent</a></li><li><a href="module-UserProfile-_class.html">_class</a></li><li><a href="module-UserRegistrationForm-UserRegistrationFormComponent.html">UserRegistrationFormComponent</a></li><li><a href="module-UserRegistrationForm-_class2.html">_class2</a></li></ul><h3>Modules</h3><ul><li><a href="module-AppComponent.html">AppComponent</a><ul class='methods'><li data-type='method'><a href="module-AppComponent.html#~isLoggedIn">isLoggedIn</a></li><li data-type='method'><a href="module-AppComponent.html#~logout">logout</a></li></ul></li><li><a href="module-AppConfig.html">AppConfig</a></li><li><a href="module-AppModule.html">AppModule</a></li><li><a href="module-AppRoutes.html">AppRoutes</a><ul class='methods'><li data-type='method'><a href="module-AppRoutes.html#~authGuard">authGuard</a></li></ul></li><li><a href="module-AppRoutingModule.html">AppRoutingModule</a></li><li><a href="module-DirectorDialog.html">DirectorDialog</a></li><li><a href="module-FetchApiDataService.html">FetchApiDataService</a><ul class='methods'><li data-type='method'><a href="module-FetchApiDataService.html#~addFavoriteMovie">addFavoriteMovie</a></li><li data-type='method'><a href="module-FetchApiDataService.html#~deleteUser">deleteUser</a></li><li data-type='method'><a href="module-FetchApiDataService.html#~editUser">editUser</a></li><li data-type='method'><a href="module-FetchApiDataService.html#~extractResponseData">extractResponseData</a></li><li data-type='method'><a href="module-FetchApiDataService.html#~getAllMovies">getAllMovies</a></li><li data-type='method'><a href="module-FetchApiDataService.html#~getDirector">getDirector</a></li><li data-type='method'><a href="module-FetchApiDataService.html#~getFavoriteMovies">getFavoriteMovies</a></li><li data-type='method'><a href="module-FetchApiDataService.html#~getGenre">getGenre</a></li><li data-type='method'><a href="module-FetchApiDataService.html#~getMovieByTitle">getMovieByTitle</a></li><li data-type='method'><a href="module-FetchApiDataService.html#~getOneMovie">getOneMovie</a></li><li data-type='method'><a href="module-FetchApiDataService.html#~getUser">getUser</a></li><li data-type='method'><a href="module-FetchApiDataService.html#~handleError">handleError</a></li><li data-type='method'><a href="module-FetchApiDataService.html#~removeFavoriteMovie">removeFavoriteMovie</a></li><li data-type='method'><a href="module-FetchApiDataService.html#~userLogin">userLogin</a></li><li data-type='method'><a href="module-FetchApiDataService.html#~userRegistration">userRegistration</a></li></ul></li><li><a href="module-GenreDialog.html">GenreDialog</a></li><li><a href="module-MovieCard.html">MovieCard</a><ul class='methods'><li data-type='method'><a href="module-MovieCard.html#~ngOnInit">ngOnInit</a></li></ul></li><li><a href="module-Navigation.html">Navigation</a><ul class='methods'><li data-type='method'><a href="module-Navigation.html#~isLoggedIn">isLoggedIn</a></li><li data-type='method'><a href="module-Navigation.html#~isWelcomePage">isWelcomePage</a></li><li data-type='method'><a href="module-Navigation.html#~logout">logout</a></li></ul></li><li><a href="module-SynopsisDialog.html">SynopsisDialog</a></li><li><a href="module-UserLoginForm.html">UserLoginForm</a><ul class='methods'><li data-type='method'><a href="module-UserLoginForm.html#~loginUser">loginUser</a></li><li data-type='method'><a href="module-UserLoginForm.html#~ngOnInit">ngOnInit</a></li></ul></li><li><a href="module-UserProfile.html">UserProfile</a><ul class='methods'><li data-type='method'><a href="module-UserProfile.html#~deleteAccount">deleteAccount</a></li><li data-type='method'><a href="module-UserProfile.html#~getUser">getUser</a></li><li data-type='method'><a href="module-UserProfile.html#~loadFavoriteMovies">loadFavoriteMovies</a></li><li data-type='method'><a href="module-UserProfile.html#~ngOnInit">ngOnInit</a></li><li data-type='method'><a href="module-UserProfile.html#~openDirectorDialog">openDirectorDialog</a></li><li data-type='method'><a href="module-UserProfile.html#~openGenreDialog">openGenreDialog</a></li><li data-type='method'><a href="module-UserProfile.html#~openSynopsisDialog">openSynopsisDialog</a></li><li data-type='method'><a href="module-UserProfile.html#~removeFavorite">removeFavorite</a></li><li data-type='method'><a href="module-UserProfile.html#~toggleEditMode">toggleEditMode</a></li><li data-type='method'><a href="module-UserProfile.html#~updateUser">updateUser</a></li></ul></li><li><a href="module-UserRegistrationForm.html">UserRegistrationForm</a><ul class='methods'><li data-type='method'><a href="module-UserRegistrationForm.html#~ngOnInit">ngOnInit</a></li><li data-type='method'><a href="module-UserRegistrationForm.html#~registerUser">registerUser</a></li></ul></li></ul><h3>Interfaces</h3><ul><li><a href="module-DirectorDialog-DirectorData.html">DirectorData</a></li><li><a href="module-GenreDialog-GenreData.html">GenreData</a></li><li><a href="module-MovieCard-Director.html">Director</a></li><li><a href="module-MovieCard-Genre.html">Genre</a></li><li><a href="module-MovieCard-Movie.html">Movie</a></li><li><a href="module-SynopsisDialog-SynopsisData.html">SynopsisData</a></li><li><a href="module-UserLoginForm-UserData.html">UserData</a></li><li><a href="module-UserProfile-User.html">User</a></li><li><a href="module-UserRegistrationForm-UserRegistrationData.html">UserRegistrationData</a></li></ul><h3>Global</h3><ul><li><a href="global.html#LoginPromptDialog">LoginPromptDialog</a></li><li><a href="global.html#WelcomePageComponent">WelcomePageComponent</a></li></ul>
-    
-</nav>
-
-<div id="main">
-    
-
-    
-
-
-
-    
-
-
-    <section class="package">
-        <h3> </h3>		
-    </section>
-
-
-
-
-
-
-
-
-
-    
-
-
-
-
-
-
-
-
-
-
-
-<section>
-
-<header>
-    
-        <h2>
-        
-            welcome-page/welcome-page.component.ts
-        
-        </h2>
-        
-    
-</header>
-
-<article>
-    
-        <div class="container-overview">
-        
-            
-
-<dl class="details">
-    
-    <dt class="tag-description">Description:</dt>
-    <dd class="tag-description"><ul class="dummy"><li><p>Welcome page component that handles user authentication dialogs and initial navigation</p></li></ul></dd>
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="welcome-page_welcome-page.component.ts.html">welcome-page/welcome-page.component.ts</a>, <a href="welcome-page_welcome-page.component.ts.html#line1">line 1</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-author">Author:</dt>
-    <dd class="tag-author">
-        <ul>
-            <li>&lt;p>[Your Name]&lt;/p></li>
-        </ul>
-    </dd>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-            
-                <div class="description usertext"><p>Welcome page component that handles user authentication dialogs and initial navigation</p></div>
-            
-
-            
-        
-        </div>
-    
-
-    
-
-    
-
-    
-    
-    
-
-     
-
-    
-
-    
-
-    
-
-    
-
-    
-</article>
-
-</section>
-
-
-
-
-    
-    
-</div>
-
-<br class="clear">
-
-<footer>
-    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 4.0.4</a> on Fri Nov 01 2024 16:21:35 GMT+0100 (Central European Standard Time) using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
-</footer>
-
-<script>prettyPrint();</script>
-<script src="scripts/polyfill.js"></script>
-<script src="scripts/linenumber.js"></script>
-
-
-
-</body>
-</html>
+<!DOCTYPE html><html class="default" lang="en"><head><meta charSet="utf-8"/><meta http-equiv="x-ua-compatible" content="IE=edge"/><title>mymdb-angular-client</title><meta name="description" content="Documentation for mymdb-angular-client"/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="stylesheet" href="assets/style.css"/><link rel="stylesheet" href="assets/highlight.css"/><script defer src="assets/main.js"></script><script async src="assets/icons.js" id="tsd-icons-script"></script><script async src="assets/search.js" id="tsd-search-script"></script><script async src="assets/navigation.js" id="tsd-nav-script"></script></head><body><script>document.documentElement.dataset.theme = localStorage.getItem("tsd-theme") || "os";document.body.style.display="none";setTimeout(() => app?app.showPage():document.body.style.removeProperty("display"),500)</script><header class="tsd-page-toolbar"><div class="tsd-toolbar-contents container"><div class="table-cell" id="tsd-search" data-base="."><div class="field"><label for="tsd-search-field" class="tsd-widget tsd-toolbar-icon search no-caption"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><use href="assets/icons.svg#icon-search"></use></svg></label><input type="text" id="tsd-search-field" aria-label="Search"/></div><div class="field"><div id="tsd-toolbar-links"></div></div><ul class="results"><li class="state loading">Preparing search index...</li><li class="state failure">The search index is not available</li></ul><a href="index.html" class="title">mymdb-angular-client</a></div><div class="table-cell" id="tsd-widgets"><a href="#" class="tsd-widget tsd-toolbar-icon menu no-caption" data-toggle="menu" aria-label="Menu"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><use href="assets/icons.svg#icon-menu"></use></svg></a></div></div></header><div class="container container-main"><div class="col-content"><div class="tsd-page-title"><h2>mymdb-angular-client</h2></div><div class="tsd-panel tsd-typography"><a id="md:🎬-mymdb---my-movie-database-client" class="tsd-anchor"></a><h1><a href="#md:🎬-mymdb---my-movie-database-client">🎬 MyMDB - My Movie Database Client</a></h1><p><a href="https://angular.io/"><img src="https://img.shields.io/badge/Angular-DD0031?style=for-the-badge&logo=angular&logoColor=white" alt="Angular"></a>
+<a href="https://www.typescriptlang.org/"><img src="https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white" alt="TypeScript"></a>
+<a href="https://material.angular.io/"><img src="https://img.shields.io/badge/Material_UI-0081CB?style=for-the-badge&logo=material-ui&logoColor=white" alt="Material UI"></a></p>
+<a id="md:📋-project-overview" class="tsd-anchor"></a><h2><a href="#md:📋-project-overview">📋 Project Overview</a></h2><p>MyMDB is a client-side application built with Angular that interfaces with a movie API. It allows users to browse, search, and manage their favorite movies while maintaining their own watchlist and profile information.</p>
+<a id="md:💻-technologies-used" class="tsd-anchor"></a><h2><a href="#md:💻-technologies-used">💻 Technologies Used</a></h2><ul>
+<li><strong>Frontend Framework:</strong> Angular 17</li>
+<li><strong>UI Components:</strong> Angular Material</li>
+<li><strong>Styling:</strong> SCSS</li>
+<li><strong>State Management:</strong> RxJS</li>
+<li><strong>Authentication:</strong> JWT (JSON Web Tokens)</li>
+<li><strong>HTTP Communication:</strong> Angular HttpClient</li>
+<li><strong>Form Management:</strong> Angular Reactive Forms</li>
+<li><strong>Development Tools:</strong><ul>
+<li>TypeScript</li>
+<li>Angular CLI</li>
+<li>npm</li>
+</ul>
+</li>
+</ul>
+<a id="md:🌟-features" class="tsd-anchor"></a><h2><a href="#md:🌟-features">🌟 Features</a></h2><ul>
+<li>User registration and authentication</li>
+<li>Movie browsing with detailed information</li>
+<li>Profile management</li>
+<li>Favorite movies functionality</li>
+<li>Responsive design for mobile and desktop</li>
+<li>Material Design interface</li>
+</ul>
+<a id="md:📸-project-screenshots" class="tsd-anchor"></a><h2><a href="#md:📸-project-screenshots">📸 Project Screenshots</a></h2><p><img src="src/assets/welcome.jpg" alt="Welcome Page">
+<img src="src/assets/movies.jpg" alt="Movies Overview">
+<img src="src/assets/movie_dialog.jpg" alt="Movie Details">
+<img src="src/assets/user_profile.jpg" alt="User Profile"></p>
+<a id="md:🛠️-technical-requirements" class="tsd-anchor"></a><h2><a href="#md:🛠️-technical-requirements">🛠️ Technical Requirements</a></h2><ul>
+<li>Node.js (version 18 or later)</li>
+<li>Angular CLI (version 17 or later)</li>
+<li>Modern web browser with JavaScript enabled</li>
+</ul>
+<a id="md:🔗-links" class="tsd-anchor"></a><h2><a href="#md:🔗-links">🔗 Links</a></h2><ul>
+<li><a href="https://ibxibx.github.io/mymdb-angular-client/">Live Demo</a></li>
+<li><a href="https://mymdb-api.herokuapp.com/documentation">API Documentation</a></li>
+<li><a href="https://github.com/ibxibx/mymdb-angular-client">GitHub Repository</a></li>
+</ul>
+<a id="md:🚀-setup-instructions" class="tsd-anchor"></a><h2><a href="#md:🚀-setup-instructions">🚀 Setup Instructions</a></h2><ol>
+<li><p><strong>Clone Repository</strong></p>
+<pre><code class="language-bash"><span class="hl-0">git</span><span class="hl-1"> </span><span class="hl-2">clone</span><span class="hl-1"> </span><span class="hl-2">https://github.com/ibxibx/mymdb-angular-client.git</span><br/><span class="hl-0">cd</span><span class="hl-1"> </span><span class="hl-2">mymdb-angular-client</span>
+</code><button>Copy</button></pre>
+</li>
+<li><p><strong>Install Dependencies</strong></p>
+<pre><code class="language-bash"><span class="hl-0">npm</span><span class="hl-1"> </span><span class="hl-2">install</span>
+</code><button>Copy</button></pre>
+</li>
+<li><p><strong>Environment Setup</strong></p>
+<ul>
+<li>Create <code>environment.ts</code> file in <code>src/environments/</code></li>
+<li>Add API URL configuration:<pre><code class="language-typescript"><span class="hl-3">export</span><span class="hl-1"> </span><span class="hl-4">const</span><span class="hl-1"> </span><span class="hl-5">environment</span><span class="hl-1"> = {</span><br/><span class="hl-1">  </span><span class="hl-6">production:</span><span class="hl-1"> </span><span class="hl-4">false</span><span class="hl-1">,</span><br/><span class="hl-1">  </span><span class="hl-6">apiUrl:</span><span class="hl-1"> </span><span class="hl-2">&#39;YOUR_API_URL&#39;</span><br/><span class="hl-1">};</span>
+</code><button>Copy</button></pre>
+</li>
+</ul>
+</li>
+<li><p><strong>Start Development Server</strong></p>
+<pre><code class="language-bash"><span class="hl-0">ng</span><span class="hl-1"> </span><span class="hl-2">serve</span>
+</code><button>Copy</button></pre>
+<p>Navigate to <code>http://localhost:4200/</code></p>
+</li>
+</ol>
+<a id="md:💭-project-reflection" class="tsd-anchor"></a><h2><a href="#md:💭-project-reflection">💭 Project Reflection</a></h2><a id="md:role-amp-responsibilities" class="tsd-anchor"></a><h3><a href="#md:role-amp-responsibilities">Role &amp; Responsibilities</a></h3><ul>
+<li>Full-stack development with focus on frontend implementation</li>
+<li>Design and implementation of user interface components</li>
+<li>Integration with REST API</li>
+<li>Implementation of user authentication and authorization</li>
+</ul>
+<a id="md:key-decisions-amp-outcomes" class="tsd-anchor"></a><h3><a href="#md:key-decisions-amp-outcomes">Key Decisions &amp; Outcomes</a></h3><ul>
+<li>Chose Angular Material for UI components to ensure consistency</li>
+<li>Implemented responsive design for better mobile experience</li>
+<li>Used JWT for secure authentication</li>
+</ul>
+<a id="md:lessons-learned" class="tsd-anchor"></a><h3><a href="#md:lessons-learned">Lessons Learned</a></h3><ul>
+<li>Enhanced understanding of Angular&#39;s component architecture</li>
+<li>Improved skills in state management with RxJS</li>
+<li>Gained experience in implementing secure authentication</li>
+</ul>
+<a id="md:future-improvements" class="tsd-anchor"></a><h3><a href="#md:future-improvements">Future Improvements</a></h3><ul>
+<li>Add movie recommendation system</li>
+<li>Implement social features</li>
+<li>Enhance search functionality</li>
+<li>Add offline capabilities</li>
+</ul>
+<a id="md:📜-license" class="tsd-anchor"></a><h2><a href="#md:📜-license">📜 License</a></h2><p>This project is licensed under the MIT License - see the <a href="LICENSE.md">LICENSE.md</a> file for details.</p>
+</div></div><div class="col-sidebar"><div class="page-menu"><div class="tsd-navigation settings"><details class="tsd-index-accordion"><summary class="tsd-accordion-summary"><h3><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><use href="assets/icons.svg#icon-chevronDown"></use></svg>Settings</h3></summary><div class="tsd-accordion-details"><div class="tsd-filter-visibility"><h4 class="uppercase">Member Visibility</h4><form><ul id="tsd-filter-options"><li class="tsd-filter-item"><label class="tsd-filter-input"><input type="checkbox" id="tsd-filter-inherited" name="inherited" checked/><svg width="32" height="32" viewBox="0 0 32 32" aria-hidden="true"><rect class="tsd-checkbox-background" width="30" height="30" x="1" y="1" rx="6" fill="none"></rect><path class="tsd-checkbox-checkmark" d="M8.35422 16.8214L13.2143 21.75L24.6458 10.25" stroke="none" stroke-width="3.5" stroke-linejoin="round" fill="none"></path></svg><span>Inherited</span></label></li><li class="tsd-filter-item"><label class="tsd-filter-input"><input type="checkbox" id="tsd-filter-external" name="external"/><svg width="32" height="32" viewBox="0 0 32 32" aria-hidden="true"><rect class="tsd-checkbox-background" width="30" height="30" x="1" y="1" rx="6" fill="none"></rect><path class="tsd-checkbox-checkmark" d="M8.35422 16.8214L13.2143 21.75L24.6458 10.25" stroke="none" stroke-width="3.5" stroke-linejoin="round" fill="none"></path></svg><span>External</span></label></li></ul></form></div><div class="tsd-theme-toggle"><h4 class="uppercase">Theme</h4><select id="tsd-theme"><option value="os">OS</option><option value="light">Light</option><option value="dark">Dark</option></select></div></div></details></div><details open class="tsd-index-accordion tsd-page-navigation"><summary class="tsd-accordion-summary"><h3><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><use href="assets/icons.svg#icon-chevronDown"></use></svg>On This Page</h3></summary><div class="tsd-accordion-details"><a href="#md:🎬-mymdb---my-movie-database-client"><span>🎬 <wbr/>MyMDB -<wbr/> <wbr/>My <wbr/>Movie <wbr/>Database <wbr/>Client</span></a><ul><li><a href="#md:📋-project-overview"><span>📋 <wbr/>Project <wbr/>Overview</span></a></li><li><a href="#md:💻-technologies-used"><span>💻 <wbr/>Technologies <wbr/>Used</span></a></li><li><a href="#md:🌟-features"><span>🌟 <wbr/>Features</span></a></li><li><a href="#md:📸-project-screenshots"><span>📸 <wbr/>Project <wbr/>Screenshots</span></a></li><li><a href="#md:🛠️-technical-requirements"><span>🛠️ <wbr/>Technical <wbr/>Requirements</span></a></li><li><a href="#md:🔗-links"><span>🔗 <wbr/>Links</span></a></li><li><a href="#md:🚀-setup-instructions"><span>🚀 <wbr/>Setup <wbr/>Instructions</span></a></li><li><a href="#md:💭-project-reflection"><span>💭 <wbr/>Project <wbr/>Reflection</span></a></li><li><ul><li><a href="#md:role-amp-responsibilities"><span>Role &amp; <wbr/>Responsibilities</span></a></li><li><a href="#md:key-decisions-amp-outcomes"><span>Key <wbr/>Decisions &amp; <wbr/>Outcomes</span></a></li><li><a href="#md:lessons-learned"><span>Lessons <wbr/>Learned</span></a></li><li><a href="#md:future-improvements"><span>Future <wbr/>Improvements</span></a></li></ul></li><li><a href="#md:📜-license"><span>📜 <wbr/>License</span></a></li></ul></div></details></div><div class="site-menu"><nav class="tsd-navigation"><a href="index.html" class="current"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="assets/icons.svg#icon-1"></use></svg><span>mymdb-angular-client</span></a><ul class="tsd-small-nested-navigation" id="tsd-nav-container" data-base="."><li>Loading...</li></ul></nav></div></div></div><footer><p class="tsd-generator">Generated using <a href="https://typedoc.org/" target="_blank">TypeDoc</a></p></footer><div class="overlay"></div></body></html>
