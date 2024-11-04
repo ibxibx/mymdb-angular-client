@@ -1,6 +1,12 @@
 /**
- * @fileoverview Welcome page component that handles user authentication dialogs and initial navigation
- * @author [Your Name]
+ * @packageDocumentation
+ * @module Components/Welcome
+ * @preferred
+ *
+ * @description
+ * This module provides the welcome/landing page component implementation.
+ * It serves as the entry point of the application, handling user authentication
+ * and initial navigation options.
  */
 
 import { Component, OnInit } from '@angular/core';
@@ -19,10 +25,22 @@ import { NavigationComponent } from '../navigation/navigation.component';
 
 /**
  * Component that represents the welcome/landing page of the application.
- * Handles user registration, login, and movie access dialogs.
+ * Provides user registration, login, and movie access functionality through
+ * dialog interfaces.
  *
- * @component
- * @selector app-welcome-page
+ * @remarks
+ * This component serves as the main entry point of the application and is
+ * responsible for directing users to either authenticate or access movie content.
+ * It uses Material Dialog components for user interactions.
+ *
+ * @example
+ * ```html
+ * <app-welcome-page></app-welcome-page>
+ * ```
+ *
+ * @public
+ * @class
+ * @implements {OnInit}
  */
 @Component({
   selector: 'app-welcome-page',
@@ -43,14 +61,24 @@ import { NavigationComponent } from '../navigation/navigation.component';
 export class WelcomePageComponent implements OnInit {
   /**
    * Creates an instance of WelcomePageComponent.
-   * @param {MatDialog} dialog - Material Dialog service for opening modal dialogs
+   *
+   * @param dialog - Material Dialog service for opening modal dialogs
    */
   constructor(public dialog: MatDialog) {}
-  /** Lifecycle hook that is called after data-bound properties are initialized */
+
+  /**
+   * Lifecycle hook that is called after data-bound properties are initialized.
+   * Currently empty but available for future initialization needs.
+   *
+   * @memberof WelcomePageComponent
+   */
   ngOnInit(): void {}
 
   /**
-   * Opens the user registration dialog with specified configuration
+   * Opens the user registration dialog.
+   * Configures dialog with specific dimensions and behavior settings.
+   *
+   * @memberof WelcomePageComponent
    * @returns {void}
    */
   openUserRegistrationDialog(): void {
@@ -63,7 +91,10 @@ export class WelcomePageComponent implements OnInit {
   }
 
   /**
-   * Opens the user login dialog with specified configuration
+   * Opens the user login dialog.
+   * Configures dialog with specific dimensions and behavior settings.
+   *
+   * @memberof WelcomePageComponent
    * @returns {void}
    */
   openUserLoginDialog(): void {
@@ -76,7 +107,10 @@ export class WelcomePageComponent implements OnInit {
   }
 
   /**
-   * Opens a dialog prompting users to log in before accessing movies
+   * Opens a dialog prompting users to authenticate before accessing movies.
+   * Shows a message explaining the need to log in or sign up.
+   *
+   * @memberof WelcomePageComponent
    * @returns {void}
    */
   openMoviesDialog(): void {
@@ -90,10 +124,22 @@ export class WelcomePageComponent implements OnInit {
 }
 
 /**
- * Dialog component that prompts users to log in or sign up to view movies
+ * Dialog component that prompts users to authenticate before viewing movies.
+ * Provides a simple message and confirmation button.
  *
- * @component
- * @selector login-prompt-dialog
+ * @remarks
+ * This is a standalone component that appears as a modal dialog when
+ * unauthenticated users attempt to access movie content.
+ *
+ * @example
+ * ```typescript
+ * const dialogRef = dialog.open(LoginPromptDialog, {
+ *   width: '300px'
+ * });
+ * ```
+ *
+ * @public
+ * @class
  */
 @Component({
   selector: 'login-prompt-dialog',
@@ -119,7 +165,8 @@ export class WelcomePageComponent implements OnInit {
 export class LoginPromptDialog {
   /**
    * Creates an instance of LoginPromptDialog.
-   * @param {MatDialogRef<LoginPromptDialog>} dialogRef - Reference to the dialog instance
+   *
+   * @param dialogRef - Reference to the dialog instance for closing operations
    */
   constructor(public dialogRef: MatDialogRef<LoginPromptDialog>) {}
 }

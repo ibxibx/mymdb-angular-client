@@ -1,6 +1,11 @@
 /**
- * @fileoverview Main application component implementation
- * @module AppComponent
+ * @packageDocumentation
+ * @module Core/App
+ * @preferred
+ *
+ * @description
+ * This module provides the root application component implementation.
+ * It serves as the main entry point and shell of the application.
  */
 
 import { Component } from '@angular/core';
@@ -10,9 +15,21 @@ import { MatButtonModule } from '@angular/material/button';
 import { CommonModule } from '@angular/common';
 
 /**
- * @class AppComponent
- * @description Root component of the application
- * @extends {Component}
+ * Root component of the MyMDB application.
+ * Provides the main application shell and handles top-level authentication state.
+ *
+ * @remarks
+ * This component serves as the application shell and handles basic authentication
+ * state management. It's responsible for the global layout and main navigation
+ * structure of the application.
+ *
+ * @example
+ * ```html
+ * <app-root></app-root>
+ * ```
+ *
+ * @public
+ * @class
  */
 @Component({
   selector: 'app-root',
@@ -22,22 +39,24 @@ import { CommonModule } from '@angular/common';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  /** @property {string} title - The application title */
+  /** The title of the application */
   title = 'MyMDB-Angular-client';
 
   /**
-   * @method isLoggedIn
-   * @description Checks if a user is currently logged in
-   * @returns {boolean} True if user is logged in
+   * Checks if a user is currently logged in by verifying local storage tokens.
+   *
+   * @returns {boolean} True if both user data and token exist in localStorage
+   * @memberof AppComponent
    */
   isLoggedIn(): boolean {
     return !!localStorage.getItem('user') && !!localStorage.getItem('token');
   }
 
   /**
-   * @method logout
-   * @description Logs out the current user and redirects to welcome page
-   * @returns {void}
+   * Logs out the current user by clearing local storage and redirecting.
+   *
+   * @memberof AppComponent
+   * @throws Will throw an error if navigation fails
    */
   logout(): void {
     localStorage.clear();

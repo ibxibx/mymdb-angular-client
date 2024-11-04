@@ -1,6 +1,13 @@
 /**
- * @fileoverview Movie card component implementation for displaying movie information
- * @module MovieCard
+ * @packageDocumentation
+ * @module Components/MovieCard
+ * @preferred
+ *
+ * @description
+ * This module provides the movie card component implementation, which is responsible
+ * for displaying and managing movie information in a grid layout. It includes
+ * functionality for viewing movie details, managing favorites, and displaying
+ * various dialogs for additional information.
  */
 
 import { Component, OnInit } from '@angular/core';
@@ -18,10 +25,12 @@ import DirectorDialogComponent from '../dialogs/director-dialog.component';
 import SynopsisDialogComponent from '../dialogs/synopsis-dialog.component';
 
 /**
+ * Represents a movie director's information.
+ *
  * @interface Director
- * @description Represents a movie's director information
+ * @category Interfaces
  */
-interface Director {
+export interface Director {
   /** Director's full name */
   name: string;
   /** Director's biography */
@@ -33,10 +42,12 @@ interface Director {
 }
 
 /**
+ * Represents a movie genre with its description.
+ *
  * @interface Genre
- * @description Represents a movie genre with its description
+ * @category Interfaces
  */
-interface Genre {
+export interface Genre {
   /** Name of the genre */
   genre: string;
   /** Description of the genre */
@@ -44,31 +55,57 @@ interface Genre {
 }
 
 /**
+ * Represents a complete movie entry with all its associated details.
+ *
  * @interface Movie
- * @description Represents a complete movie entry with all its details
+ * @category Interfaces
  */
-interface Movie {
+export interface Movie {
   /** Unique identifier for the movie */
   _id: string;
+
   /** Movie title */
   Title: string;
+
   /** Movie synopsis/description */
   Description: string;
+
   /** List of actors in the movie */
   Actors: string[];
+
   /** URL to movie poster image */
   ImagePath: string;
+
   /** Indicates if movie is featured */
   Featured: boolean;
+
   /** Director information */
   Director: Director;
+
   /** List of movie genres */
   Genres: Genre[];
 }
 
 /**
- * @class MovieCardComponent
- * @description Component for displaying movie cards and handling user interactions
+ * Component responsible for displaying movie information in a card format and
+ * handling user interactions with movies.
+ *
+ * @remarks
+ * This component provides a grid layout of movie cards, each showing basic movie
+ * information and allowing users to:
+ * - View detailed movie information
+ * - Add/remove movies from their favorites
+ * - View director information
+ * - View genre information
+ * - View movie synopsis
+ *
+ * @example
+ * ```html
+ * <app-movie-card></app-movie-card>
+ * ```
+ *
+ * @public
+ * @class
  * @implements {OnInit}
  */
 @Component({
@@ -89,32 +126,21 @@ interface Movie {
   ],
 })
 export class MovieCardComponent implements OnInit {
-  /**
-   * @property {Movie[]} movies
-   * @description Array of movies to display
-   * @public
-   */
+  /** Array containing all movies to be displayed */
   movies: Movie[] = [];
 
-  /**
-   * @property {string[]} favorites
-   * @description Array of user's favorite movie IDs
-   * @public
-   */
+  /** Array of movie IDs that the current user has marked as favorites */
   favorites: string[] = [];
 
-  /**
-   * @property {any} user
-   * @description Current user data
-   * @public
-   */
+  /** Current user data stored in the component */
   user: any;
 
   /**
-   * @constructor
-   * @param {FetchApiDataService} fetchApiData - Service for API calls
-   * @param {MatDialog} dialog - Service for displaying dialogs
-   * @param {MatSnackBar} snackBar - Service for showing notifications
+   * Creates an instance of MovieCardComponent.
+   *
+   * @param fetchApiData - Service for making API calls
+   * @param dialog - Service for displaying Material dialogs
+   * @param snackBar - Service for showing notification messages
    */
   constructor(
     public fetchApiData: FetchApiDataService,
@@ -123,9 +149,10 @@ export class MovieCardComponent implements OnInit {
   ) {}
 
   /**
-   * @method ngOnInit
-   * @description Initializes component data after creation
-   * @returns {void}
+   * Lifecycle hook that is called after data-bound properties are initialized.
+   * Fetches initial movie data and user favorites.
+   *
+   * @memberof MovieCardComponent
    */
   ngOnInit(): void {
     this.getMovies();
@@ -133,8 +160,10 @@ export class MovieCardComponent implements OnInit {
   }
 
   /**
-   * Loads user data and favorites from storage.
-   * Retrieves user information from localStorage and fetches their favorite movies.
+   * Retrieves user data from localStorage and loads their favorite movies.
+   *
+   * @memberof MovieCardComponent
+   * @throws {Error} If user data cannot be parsed from localStorage
    */
   loadUserData(): void {
     const userString = localStorage.getItem('user');
@@ -147,8 +176,9 @@ export class MovieCardComponent implements OnInit {
   }
 
   /**
-   * Fetches all movies from the API.
-   * Updates the movies array with the retrieved data.
+   * Retrieves all movies from the API and updates the component's movie list.
+   *
+   * @memberof MovieCardComponent
    */
   getMovies(): void {
     this.fetchApiData.getAllMovies().subscribe((resp: Movie[]) => {
@@ -158,8 +188,10 @@ export class MovieCardComponent implements OnInit {
   }
 
   /**
-   * Opens a dialog displaying genre information.
-   * @param genre The genre information to display
+   * Opens a dialog displaying information about a specific genre.
+   *
+   * @param genre - The genre information to display
+   * @memberof MovieCardComponent
    */
   openGenreDialog(genre: Genre): void {
     this.dialog.open(GenreDialogComponent, {
@@ -169,8 +201,10 @@ export class MovieCardComponent implements OnInit {
   }
 
   /**
-   * Opens a dialog displaying director information.
-   * @param director The director information to display
+   * Opens a dialog displaying information about a movie director.
+   *
+   * @param director - The director information to display
+   * @memberof MovieCardComponent
    */
   openDirectorDialog(director: Director): void {
     this.dialog.open(DirectorDialogComponent, {
@@ -180,8 +214,10 @@ export class MovieCardComponent implements OnInit {
   }
 
   /**
-   * Opens a dialog displaying movie synopsis.
-   * @param movie The movie information to display
+   * Opens a dialog displaying the movie's synopsis and cast information.
+   *
+   * @param movie - The movie information to display
+   * @memberof MovieCardComponent
    */
   openSynopsisDialog(movie: Movie): void {
     this.dialog.open(SynopsisDialogComponent, {
@@ -195,17 +231,23 @@ export class MovieCardComponent implements OnInit {
   }
 
   /**
-   * Checks if a movie is in user's favorites.
-   * @param movieId ID of the movie to check
-   * @returns True if the movie is in favorites
+   * Checks if a specific movie is in the user's favorites list.
+   *
+   * @param movieId - The ID of the movie to check
+   * @returns True if the movie is in the user's favorites, false otherwise
+   * @memberof MovieCardComponent
    */
   isFavorite(movieId: string): boolean {
     return this.favorites.includes(movieId);
   }
 
   /**
-   * Toggles a movie's favorite status for the current user.
-   * @param movieId ID of the movie to toggle
+   * Toggles the favorite status of a movie for the current user.
+   * Adds or removes the movie from the user's favorites list and updates the UI.
+   *
+   * @param movieId - The ID of the movie to toggle
+   * @memberof MovieCardComponent
+   * @throws {Error} If user is not logged in or if API call fails
    */
   toggleFavorite(movieId: string): void {
     if (!this.user) return;

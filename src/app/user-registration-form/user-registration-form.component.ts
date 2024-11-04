@@ -1,6 +1,11 @@
 /**
- * @fileoverview Component for handling new user registration
- * @module UserRegistrationForm
+ * @packageDocumentation
+ * @module Components/Auth
+ * @preferred
+ *
+ * @description
+ * This module provides the user registration form component implementation.
+ * It handles new user sign-up functionality with form validation and API integration.
  */
 
 import { Component, OnInit, Input } from '@angular/core';
@@ -14,22 +19,44 @@ import { MatButtonModule } from '@angular/material/button';
 import { FormsModule } from '@angular/forms';
 
 /**
+ * Interface defining the structure of user registration data.
+ *
  * @interface UserRegistrationData
- * @description Structure for user registration data
+ * @category Interfaces
  */
-interface UserRegistrationData {
+export interface UserRegistrationData {
+  /** User's chosen username */
   Username: string;
+
+  /** User's account password */
   Password: string;
+
+  /** User's email address */
   Email: string;
+
+  /** User's date of birth */
   Birthday: string;
 }
 
 /**
- * @class UserRegistrationFormComponent
- * @description Component for handling new user registration form and submission
+ * Component that provides the registration form interface for new users.
+ * Handles user registration process including form validation and submission.
+ *
+ * @remarks
+ * This component is implemented as a standalone component and uses Angular Material
+ * components for the form interface. It manages form state and handles submission
+ * through the API service.
+ *
+ * @example
+ * ```typescript
+ * const dialogRef = dialog.open(UserRegistrationFormComponent, {
+ *   width: '400px'
+ * });
+ * ```
+ *
+ * @public
+ * @class
  * @implements {OnInit}
- * @selector app-user-registration-form
- * @standalone
  */
 @Component({
   selector: 'app-user-registration-form',
@@ -46,17 +73,25 @@ interface UserRegistrationData {
 })
 export class UserRegistrationFormComponent implements OnInit {
   /**
-   * @property {UserRegistrationData} userData
-   * @description Holds the user registration form data
-   * @input Binding for form data
+   * Input property holding the user registration form data.
+   * Two-way bound to form inputs.
+   *
+   * @public
+   * @type {UserRegistrationData}
    */
-  @Input() userData = { Username: '', Password: '', Email: '', Birthday: '' };
+  @Input() userData: UserRegistrationData = {
+    Username: '',
+    Password: '',
+    Email: '',
+    Birthday: '',
+  };
 
   /**
-   * @constructor
-   * @param {FetchApiDataService} fetchApiData - Service for API calls
-   * @param {MatDialogRef<UserRegistrationFormComponent>} dialogRef - Reference to the dialog containing this component
-   * @param {MatSnackBar} snackBar - Service for showing notifications
+   * Creates an instance of UserRegistrationFormComponent.
+   *
+   * @param fetchApiData - Service for making registration API calls
+   * @param dialogRef - Reference to the dialog containing this component
+   * @param snackBar - Service for displaying notification messages
    */
   constructor(
     public fetchApiData: FetchApiDataService,
@@ -65,20 +100,31 @@ export class UserRegistrationFormComponent implements OnInit {
   ) {}
 
   /**
-   * @method ngOnInit
-   * @description Lifecycle hook that is called after data-bound properties are initialized
-   * @returns {void}
+   * Lifecycle hook that is called after data-bound properties are initialized.
+   * Currently empty but available for future initialization needs.
+   *
+   * @memberof UserRegistrationFormComponent
    */
   ngOnInit(): void {}
 
   /**
-   * @method registerUser
-   * @description Handles user registration process including validation
-   * @returns {void}
-   * @throws {Error} When registration fails or validation fails
+   * Handles the user registration process when the form is submitted.
+   * Performs basic validation before making the API call.
+   *
+   * On successful registration:
+   * - Logs success message
+   * - Closes the registration dialog
+   * - Shows success notification
+   *
+   * On registration failure:
+   * - Logs error details
+   * - Shows error notification
+   *
+   * @memberof UserRegistrationFormComponent
+   * @throws Will throw an error if required fields are missing or if API call fails
    */
   registerUser(): void {
-    // Basic validation
+    // Basic form validation
     if (
       !this.userData.Username ||
       !this.userData.Password ||
@@ -90,6 +136,7 @@ export class UserRegistrationFormComponent implements OnInit {
       return;
     }
 
+    // Process registration
     this.fetchApiData.userRegistration(this.userData).subscribe({
       next: (response) => {
         console.log('Registration successful:', response);

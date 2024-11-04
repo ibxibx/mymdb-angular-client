@@ -1,9 +1,11 @@
-<!-- movie-card.component.html -->
-
+<!-- Navigation component rendered at the top of the page -->
 <app-navigation></app-navigation>
+
+<!-- Main container for the movie grid using CSS Grid layout -->
 <div class="movie-grid">
+  <!-- Iterate through each movie in the movies array -->
   <mat-card *ngFor="let movie of movies">
-    <!-- Make the image clickable for movie details -->
+    <!-- Movie poster image that opens synopsis dialog when clicked -->
     <img
       mat-card-image
       [src]="movie.ImagePath"
@@ -12,6 +14,7 @@
       style="cursor: pointer"
     />
 
+    <!-- Movie header section containing title and director -->
     <mat-card-header>
       <mat-card-title>{{ movie.Title }}</mat-card-title>
       <mat-card-subtitle
@@ -19,7 +22,9 @@
       >
     </mat-card-header>
 
+    <!-- Action buttons section -->
     <mat-card-actions>
+      <!-- Genre information button - shows first genre in the list -->
       <button
         mat-button
         color="primary"
@@ -28,6 +33,7 @@
         Genre
       </button>
 
+      <!-- Director information button -->
       <button
         mat-button
         color="primary"
@@ -36,10 +42,12 @@
         Director
       </button>
 
+      <!-- Synopsis button to show movie details -->
       <button mat-button color="primary" (click)="openSynopsisDialog(movie)">
         Synopsis
       </button>
 
+      <!-- Favorite toggle button - changes color and icon based on favorite status -->
       <button
         mat-icon-button
         [color]="isFavorite(movie._id) ? 'warn' : ''"

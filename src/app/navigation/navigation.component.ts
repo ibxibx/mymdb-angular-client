@@ -1,7 +1,11 @@
 /**
- * @fileoverview Component for handling navigation and user authentication state
- * @module Navigation
- *  @since 1.0.0 - Optional
+ * @packageDocumentation
+ * @module Components/Navigation
+ * @preferred
+ *
+ * @description
+ * This module provides the main navigation component for the MyMDB application.
+ * It handles user navigation, authentication state, and responsive layout.
  */
 
 import { Component } from '@angular/core';
@@ -11,11 +15,22 @@ import { MatButtonModule } from '@angular/material/button';
 import { CommonModule } from '@angular/common';
 
 /**
- * @class NavigationComponent
- * @description Main navigation component providing routing and authentication controls
- * @selector app-navigation
- * @standalone
- * @implements {OnInit} - Optional
+ * Main navigation component providing routing and authentication controls.
+ * Handles user session management and navigation between different sections
+ * of the application.
+ *
+ * @remarks
+ * This component is implemented as a standalone component and uses Angular Material
+ * components for styling. It dynamically adjusts its base URL based on the deployment
+ * environment and manages user authentication state.
+ *
+ * @example
+ * ```html
+ * <app-navigation></app-navigation>
+ * ```
+ *
+ * @public
+ * @class
  */
 @Component({
   selector: 'app-navigation',
@@ -26,48 +41,58 @@ import { CommonModule } from '@angular/common';
 })
 export class NavigationComponent {
   /**
-   * @property {string} baseUrl
-   * @description Dynamic base URL determined by deployment environment
+   * Dynamic base URL determined by deployment environment.
+   * Adjusts paths based on whether the app is deployed under a subdirectory.
+   *
+   * @readonly
+   * @type {string}
    */
   baseUrl = window.location.pathname.includes('mymdb-angular-client')
     ? '/mymdb-angular-client'
     : '';
 
   /**
-   * @property {string} logoPath
-   * @description Path to the application logo, adjusted for base URL
+   * Path to the application logo, adjusted for the current base URL.
+   * Used in the template to display the application logo.
+   *
+   * @readonly
+   * @type {string}
    */
   logoPath = `${this.baseUrl}/assets/mymdb-logo.png`;
 
   /**
-   * @constructor
-   * @param {Router} router - Angular router service for navigation
+   * Creates an instance of NavigationComponent.
+   *
+   * @param router - Angular router service for navigation operations
    */
   constructor(private router: Router) {}
 
   /**
-   * @method isLoggedIn
-   * @description Checks if user is currently logged in
-   * @returns {boolean} True if user is logged in
+   * Checks if a user is currently logged in by verifying the presence
+   * of user credentials in localStorage.
+   *
+   * @returns {boolean} True if both user data and token exist in localStorage
    */
   isLoggedIn(): boolean {
     return !!localStorage.getItem('user') && !!localStorage.getItem('token');
   }
 
   /**
-   * @method isWelcomePage
-   * @description Checks if current route is the welcome page
-   * @returns {boolean} True if current page is welcome page
+   * Determines if the current route is the welcome page.
+   * Used to conditionally show/hide the navigation bar.
+   *
+   * @returns {boolean} True if the current URL matches the welcome page route
    */
   isWelcomePage(): boolean {
     return this.router.url === '/welcome';
   }
 
   /**
-   * @method logout
-   * @description Handles user logout by clearing storage and redirecting
-   * @param {Event} event - Click event
-   * @returns {void}
+   * Handles user logout process by clearing stored credentials
+   * and redirecting to the welcome page.
+   *
+   * @param {Event} event - Click event to prevent default behavior
+   * @throws Will throw an error if navigation fails
    */
   logout(event: Event): void {
     event.preventDefault();

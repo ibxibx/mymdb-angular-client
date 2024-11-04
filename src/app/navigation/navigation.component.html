@@ -1,14 +1,21 @@
-<!-- src/app/navigation/navigation.component.html -->
-
+<!-- Navigation bar - only shown when user is logged in and not on welcome page -->
 <nav *ngIf="isLoggedIn() && !isWelcomePage()" class="navigation-bar">
+  <!-- Main navigation container with responsive layout -->
   <div class="nav-content">
+    <!-- Logo section -->
     <div class="logo-container">
       <img [src]="logoPath" alt="MyMDB Logo" class="nav-logo" />
     </div>
 
+    <!-- Navigation links section -->
     <div class="nav-links">
+      <!-- Movies page link with active state tracking -->
       <a routerLink="/movies" routerLinkActive="active">Movies</a>
+
+      <!-- Profile page link with active state tracking -->
       <a routerLink="/profile" routerLinkActive="active">Profile</a>
+
+      <!-- Logout link with click handler -->
       <a href="#" (click)="logout($event)">Logout</a>
     </div>
   </div>

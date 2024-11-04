@@ -1,13 +1,19 @@
+<!-- Main container for the welcome page -->
 <div class="main-page">
+  <!-- Welcome heading -->
   <h1>Welcome to MyMDB - My Movie Database!</h1>
 
+  <!-- Container for action buttons -->
   <div class="button-group">
+    <!-- Sign Up button - opens registration dialog -->
     <button mat-raised-button (click)="openUserRegistrationDialog()">
       Sign Up
     </button>
 
+    <!-- Login button - opens login dialog -->
     <button mat-raised-button (click)="openUserLoginDialog()">Login</button>
 
+    <!-- Movies button - opens movies dialog or prompts for login -->
     <button mat-raised-button (click)="openMoviesDialog()">All Movies</button>
   </div>
 </div>

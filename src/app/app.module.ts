@@ -1,6 +1,12 @@
 /**
- * @fileoverview Main application module configuration
- * @module AppModule
+ * @packageDocumentation
+ * @module Core/Module
+ * @preferred
+ *
+ * @description
+ * This module serves as the root module of the application, configuring all
+ * necessary imports, declarations, and providers needed for the application
+ * to function.
  */
 
 import { NgModule } from '@angular/core';
@@ -30,8 +36,18 @@ import { UserProfileComponent } from './user-profile/user-profile.component';
 import { NavigationComponent } from './navigation/navigation.component';
 
 /**
- * @constant {Routes} appRoutes
- * @description Application route configurations
+ * Application route configurations defining the navigation structure.
+ *
+ * @remarks
+ * Includes routes for:
+ * - Welcome page
+ * - Movie listings
+ * - User profile
+ * - Default redirection
+ *
+ * @public
+ * @constant
+ * @type {Routes}
  */
 const appRoutes: Routes = [
   { path: 'welcome', component: WelcomePageComponent },
@@ -41,9 +57,19 @@ const appRoutes: Routes = [
 ];
 
 /**
- * @class AppModule
- * @description Root module of the application
- * @extends {NgModule}
+ * Root module of the MyMDB application.
+ * Configures all necessary Angular modules, components, and services.
+ *
+ * @remarks
+ * This module brings together all the pieces of the application:
+ * - Material UI components
+ * - Feature components
+ * - Routing configuration
+ * - Form handling
+ * - Browser animations
+ *
+ * @public
+ * @class
  */
 @NgModule({
   declarations: [

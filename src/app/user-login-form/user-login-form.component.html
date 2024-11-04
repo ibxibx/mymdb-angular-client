@@ -1,11 +1,14 @@
-<!-- user-login-form.component.html code -->
-
+<!-- Main card container for login form -->
 <mat-card>
+  <!-- Card header with title -->
   <mat-card-header>
     <mat-card-title>Login</mat-card-title>
   </mat-card-header>
+
+  <!-- Card content containing the form -->
   <mat-card-content>
     <form>
+      <!-- Username input field -->
       <mat-form-field>
         <input
           matInput
@@ -16,6 +19,8 @@
           required
         />
       </mat-form-field>
+
+      <!-- Password input field -->
       <mat-form-field>
         <input
           matInput
@@ -28,6 +33,8 @@
       </mat-form-field>
     </form>
   </mat-card-content>
+
+  <!-- Card actions containing the submit button -->
   <mat-card-actions>
     <button mat-raised-button color="primary" (click)="loginUser()">
       Login

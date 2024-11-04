@@ -1,7 +1,13 @@
 /**
- * @fileoverview Component for managing user profile information and favorite movies
- * @module UserProfile
+ * @packageDocumentation
+ * @module Components/Profile
+ * @preferred
+ *
+ * @description
+ * This module provides the user profile management component implementation.
+ * It handles user profile viewing, editing, and favorite movies management.
  */
+
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { FetchApiDataService } from '../fetch-api-data.service';
@@ -20,25 +26,47 @@ import DirectorDialogComponent from '../dialogs/director-dialog.component';
 import SynopsisDialogComponent from '../dialogs/synopsis-dialog.component';
 
 /**
+ * Interface defining the structure of user profile data.
+ *
  * @interface User
- * @description User profile data structure
+ * @category Interfaces
  */
 interface User {
+  /** Optional unique identifier for the user */
   _id?: string;
+
+  /** User's chosen username */
   Username: string;
+
+  /** User's account password */
   Password: string;
+
+  /** User's email address */
   Email: string;
+
+  /** User's date of birth */
   Birthday: string;
 }
 
 /**
- * @class UserProfileComponent
- * @description Component for displaying and managing user profile and favorite movies
+ * Component for managing user profile information and favorite movies.
+ * Provides functionality for viewing and editing profile details,
+ * managing favorite movies, and account deletion.
+ *
+ * @remarks
+ * This component uses Angular Material components for the UI and implements
+ * various dialog components for displaying movie information. It manages
+ * user authentication state and handles profile data persistence.
+ *
+ * @example
+ * ```html
+ * <app-user-profile></app-user-profile>
+ * ```
+ *
+ * @public
+ * @class
  * @implements {OnInit}
- * @selector app-user-profile
- * @standalone
  */
-
 @Component({
   selector: 'app-user-profile',
   templateUrl: './user-profile.component.html',
@@ -59,13 +87,16 @@ interface User {
   ],
 })
 export class UserProfileComponent implements OnInit {
-  /** @property {User} user - Current user's profile data */
+  /** Current user's profile data */
   user: any = {};
-  /** @property {boolean} editMode - Controls profile edit mode visibility */
+
+  /** Flag to control profile edit mode */
   editMode: boolean = false;
-  /** @property {Array<any>} favoriteMovies - User's favorite movies list */
+
+  /** List of user's favorite movies */
   favoriteMovies: any[] = [];
-  /** @property {User} updatedUser - Temporary storage for profile updates */
+
+  /** Temporary storage for profile updates during edit mode */
   updatedUser = {
     Username: '',
     Password: '',
@@ -74,11 +105,12 @@ export class UserProfileComponent implements OnInit {
   };
 
   /**
-   * @constructor
-   * @param {FetchApiDataService} fetchApiData - Service for API calls
-   * @param {MatDialog} dialog - Service for dialog windows
-   * @param {MatSnackBar} snackBar - Service for notifications
-   * @param {Router} router - Angular router service
+   * Creates an instance of UserProfileComponent.
+   *
+   * @param fetchApiData - Service for making API calls
+   * @param dialog - Service for displaying dialog windows
+   * @param snackBar - Service for showing notification messages
+   * @param router - Angular router service for navigation
    */
   constructor(
     public fetchApiData: FetchApiDataService,
@@ -265,7 +297,7 @@ export class UserProfileComponent implements OnInit {
   /**
    * @method openDirectorDialog
    * @description Opens dialog with director information
-   * @param {any} genre - Director data to display
+   * @param {any} director - Director data to display
    * @returns {void}
    */
   openDirectorDialog(director: any): void {
@@ -278,7 +310,7 @@ export class UserProfileComponent implements OnInit {
   /**
    * @method openSynopsisDialog
    * @description Opens dialog with synopsis information
-   * @param {any} genre - Synopsis data to display
+   * @param {any} movie - Movie data containing synopsis information
    * @returns {void}
    */
   openSynopsisDialog(movie: any): void {

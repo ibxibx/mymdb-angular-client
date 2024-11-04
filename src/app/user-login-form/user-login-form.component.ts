@@ -1,6 +1,11 @@
 /**
- * @fileoverview Component handling user login functionality
- * @module UserLoginForm
+ * @packageDocumentation
+ * @module Components/Auth
+ * @preferred
+ *
+ * @description
+ * This module provides the user login form component implementation.
+ * It handles user authentication through a material dialog form interface.
  */
 
 import { Component, OnInit, Input } from '@angular/core';
@@ -9,7 +14,7 @@ import { FetchApiDataService } from '../fetch-api-data.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
 
-// Import Material Modules
+// Material UI Imports
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
@@ -18,20 +23,38 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { FormsModule } from '@angular/forms';
 
 /**
+ * Interface defining the structure of user login credentials.
+ *
  * @interface UserData
- * @description User login credentials structure
+ * @category Interfaces
  */
-interface UserData {
+export interface UserData {
+  /** User's unique username */
   Username: string;
+
+  /** User's account password */
   Password: string;
 }
 
 /**
- * @class UserLoginFormComponent
- * @description Component handling user login form and authentication
+ * Component that provides a login form interface for user authentication.
+ * Handles user login process and navigation after successful authentication.
+ *
+ * @remarks
+ * This component is implemented as a standalone component and uses Angular Material
+ * components for the form interface. It manages user authentication state and
+ * handles form submission and error cases.
+ *
+ * @example
+ * ```typescript
+ * const dialogRef = dialog.open(UserLoginFormComponent, {
+ *   width: '400px'
+ * });
+ * ```
+ *
+ * @public
+ * @class
  * @implements {OnInit}
- * @selector app-user-login-form
- * @standalone
  */
 @Component({
   selector: 'app-user-login-form',
@@ -49,18 +72,21 @@ interface UserData {
 })
 export class UserLoginFormComponent implements OnInit {
   /**
-   * @property {UserData} userData
-   * @description Holds the user's login credentials
-   * @input Binding for form data
+   * Input property holding the user's login credentials.
+   * Two-way bound to form inputs.
+   *
+   * @public
+   * @type {UserData}
    */
-  @Input() userData = { Username: '', Password: '' };
+  @Input() userData: UserData = { Username: '', Password: '' };
 
   /**
-   * @constructor
-   * @param {FetchApiDataService} fetchApiData - Service for API calls
-   * @param {MatDialogRef<UserLoginFormComponent>} dialogRef - Reference to the dialog containing this component
-   * @param {MatSnackBar} snackBar - Service for showing notifications
-   * @param {Router} router - Angular router service for navigation
+   * Creates an instance of UserLoginFormComponent.
+   *
+   * @param fetchApiData - Service for making authentication API calls
+   * @param dialogRef - Reference to the dialog containing this component
+   * @param snackBar - Service for displaying notification messages
+   * @param router - Angular router service for navigation after login
    */
   constructor(
     public fetchApiData: FetchApiDataService,
@@ -70,17 +96,27 @@ export class UserLoginFormComponent implements OnInit {
   ) {}
 
   /**
-   * @method ngOnInit
-   * @description Lifecycle hook that is called after data-bound properties are initialized
-   * @returns {void}
+   * Lifecycle hook that is called after data-bound properties are initialized.
+   * Currently empty but available for future initialization needs.
+   *
+   * @memberof UserLoginFormComponent
    */
   ngOnInit(): void {}
 
   /**
-   * @method loginUser
-   * @description Handles user login process
-   * @returns {void}
-   * @throws {Error} When login fails
+   * Handles the user login process when the login form is submitted.
+   * On successful login:
+   * - Stores user data and token in localStorage
+   * - Closes the login dialog
+   * - Shows success message
+   * - Navigates to movies page
+   *
+   * On failed login:
+   * - Shows error message
+   * - Logs error to console
+   *
+   * @memberof UserLoginFormComponent
+   * @throws Will throw an error if the login API call fails
    */
   loginUser(): void {
     this.fetchApiData.userLogin(this.userData).subscribe({

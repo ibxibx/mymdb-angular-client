@@ -1,6 +1,6 @@
 /**
- * @fileoverview Movie synopsis dialog component implementation
- * @module SynopsisDialog
+ * @packageDocumentation
+ * @module Components/Dialog
  */
 
 import { Component, Inject } from '@angular/core';
@@ -8,10 +8,12 @@ import { MAT_DIALOG_DATA, MatDialogModule } from '@angular/material/dialog';
 import { MatButtonModule } from '@angular/material/button';
 
 /**
+ * Interface defining the structure of synopsis data passed to the dialog.
+ *
  * @interface SynopsisData
- * @description Interface defining the structure of synopsis data passed to the dialog
+ * @category Interfaces
  */
-interface SynopsisData {
+export interface SynopsisData {
   /** The title of the movie */
   title: string;
   /** The movie's synopsis */
@@ -21,9 +23,28 @@ interface SynopsisData {
 }
 
 /**
- * @class SynopsisDialogComponent
- * @description Modal dialog component that displays a movie's synopsis and cast information
- * @extends {Component}
+ * Modal dialog component that displays a movie's synopsis and cast information.
+ * This component presents detailed movie information including plot summary and
+ * cast list in a Material dialog format.
+ *
+ * @remarks
+ * This component uses Angular Material's dialog system and is designed to be opened
+ * via MatDialog.open(). It expects synopsis data to be passed through the dialog's
+ * data property.
+ *
+ * @example
+ * ```typescript
+ * const dialogRef = dialog.open(SynopsisDialogComponent, {
+ *   data: {
+ *     title: 'Inception',
+ *     description: 'A thief who steals corporate secrets...',
+ *     actors: ['Leonardo DiCaprio', 'Ellen Page', 'Tom Hardy']
+ *   }
+ * });
+ * ```
+ *
+ * @public
+ * @class
  */
 @Component({
   selector: 'app-synopsis-dialog',
@@ -69,9 +90,10 @@ interface SynopsisData {
 })
 export default class SynopsisDialogComponent {
   /**
-   * @constructor
-   * @param {SynopsisData} data - The movie synopsis data to be displayed in the dialog
-   * @description Initializes the dialog with injected synopsis data
+   * Creates an instance of SynopsisDialogComponent.
+   *
+   * @param data - The movie synopsis data to be displayed in the dialog
+   * @throws Will throw an error if required data properties are missing
    */
   constructor(
     @Inject(MAT_DIALOG_DATA)

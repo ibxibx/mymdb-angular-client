@@ -1,6 +1,6 @@
 /**
- * @fileoverview Genre information dialog component implementation
- * @module GenreDialog
+ * @packageDocumentation
+ * @module Components/Dialog
  */
 
 import { Component, Inject } from '@angular/core';
@@ -8,10 +8,12 @@ import { MAT_DIALOG_DATA, MatDialogModule } from '@angular/material/dialog';
 import { MatButtonModule } from '@angular/material/button';
 
 /**
+ * Interface defining the structure of genre data passed to the dialog.
+ *
  * @interface GenreData
- * @description Interface defining the structure of genre data passed to the dialog
+ * @category Interfaces
  */
-interface GenreData {
+export interface GenreData {
   /** The name of the genre */
   genre: string;
   /** Detailed description of the genre */
@@ -19,9 +21,27 @@ interface GenreData {
 }
 
 /**
- * @class GenreDialogComponent
- * @description Modal dialog component that displays information about a movie genre
- * @extends {Component}
+ * Modal dialog component that displays information about a movie genre.
+ * This component presents detailed information about specific movie genres
+ * in a Material dialog format.
+ *
+ * @remarks
+ * This component uses Angular Material's dialog system and is designed to be opened
+ * via MatDialog.open(). It expects genre data to be passed through the dialog's
+ * data property.
+ *
+ * @example
+ * ```typescript
+ * const dialogRef = dialog.open(GenreDialogComponent, {
+ *   data: {
+ *     genre: 'Science Fiction',
+ *     description: 'A genre of speculative fiction...'
+ *   }
+ * });
+ * ```
+ *
+ * @public
+ * @class
  */
 @Component({
   selector: 'app-genre-dialog',
@@ -57,9 +77,10 @@ interface GenreData {
 })
 export default class GenreDialogComponent {
   /**
-   * @constructor
-   * @param {GenreData} data - The genre data to be displayed in the dialog
-   * @description Initializes the dialog with injected genre data
+   * Creates an instance of GenreDialogComponent.
+   *
+   * @param data - The genre data to be displayed in the dialog
+   * @throws Will throw an error if required data properties are missing
    */
   constructor(
     @Inject(MAT_DIALOG_DATA)

@@ -1,6 +1,6 @@
 /**
- * @fileoverview Director information dialog component implementation
- * @module DirectorDialog
+ * @packageDocumentation
+ * @module Components/Dialog
  */
 
 import { Component, Inject } from '@angular/core';
@@ -8,10 +8,12 @@ import { MAT_DIALOG_DATA, MatDialogModule } from '@angular/material/dialog';
 import { MatButtonModule } from '@angular/material/button';
 
 /**
+ * Interface defining the structure of director data passed to the dialog.
+ *
  * @interface DirectorData
- * @description Interface defining the structure of director data passed to the dialog
+ * @category Interfaces
  */
-interface DirectorData {
+export interface DirectorData {
   /** The director's full name */
   name: string;
   /** Biography of the director */
@@ -23,9 +25,28 @@ interface DirectorData {
 }
 
 /**
- * @class DirectorDialogComponent
- * @description Modal dialog component that displays detailed information about a movie director
- * @extends {Component}
+ * Modal dialog component that displays detailed information about a movie director.
+ * This component is responsible for rendering director information in a Material dialog.
+ *
+ * @remarks
+ * This component uses Angular Material's dialog system and is designed to be opened
+ * via MatDialog.open(). It expects director data to be passed through the dialog's
+ * data property.
+ *
+ * @example
+ * ```typescript
+ * const dialogRef = dialog.open(DirectorDialogComponent, {
+ *   data: {
+ *     name: 'Christopher Nolan',
+ *     bio: 'British-American film director...',
+ *     birthPlace: 'London, England',
+ *     moviesCount: 11
+ *   }
+ * });
+ * ```
+ *
+ * @public
+ * @class
  */
 @Component({
   selector: 'app-director-dialog',
@@ -73,9 +94,10 @@ interface DirectorData {
 })
 export default class DirectorDialogComponent {
   /**
-   * @constructor
-   * @param {DirectorData} data - The director data to be displayed in the dialog
-   * @description Initializes the dialog with injected director data
+   * Creates an instance of DirectorDialogComponent.
+   *
+   * @param data - The director data to be displayed in the dialog
+   * @throws Will throw an error if required data properties are missing
    */
   constructor(
     @Inject(MAT_DIALOG_DATA)

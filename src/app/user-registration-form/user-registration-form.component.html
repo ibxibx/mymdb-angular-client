@@ -1,11 +1,14 @@
-<!-- user-registration-form.component.html code -->
-
+<!-- Main card container for registration form -->
 <mat-card>
+  <!-- Card header with title -->
   <mat-card-header>
     <mat-card-title>Sign Up!</mat-card-title>
   </mat-card-header>
+
+  <!-- Card content containing the registration form -->
   <mat-card-content>
     <form>
+      <!-- Username input field -->
       <mat-form-field>
         <input
           matInput
@@ -16,6 +19,8 @@
           required
         />
       </mat-form-field>
+
+      <!-- Password input field -->
       <mat-form-field>
         <input
           matInput
@@ -26,6 +31,8 @@
           required
         />
       </mat-form-field>
+
+      <!-- Email input field -->
       <mat-form-field>
         <input
           matInput
@@ -36,6 +43,8 @@
           required
         />
       </mat-form-field>
+
+      <!-- Birthday input field -->
       <mat-form-field>
         <input
           matInput
@@ -47,6 +56,8 @@
       </mat-form-field>
     </form>
   </mat-card-content>
+
+  <!-- Card actions containing the submit button -->
   <mat-card-actions>
     <button mat-raised-button (click)="registerUser()" color="primary">
       Sign Up
